@@ -17,9 +17,9 @@ public class VAMilk20 {
     public void addRecipe() {
         ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_milk_bucket"), new ItemStack(Material.MILK_BUCKET))
                 .shape(
-                    "SSS",
-                    "SWS",
-                    "SSS")
+                        "SSS",
+                        "SWS",
+                        "SSS")
                 .setIngredient('S', new RecipeChoice.MaterialChoice(Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS, Material.BEETROOT_SEEDS, Material.TORCHFLOWER_SEEDS))
                 .setIngredient('W', Material.WATER_BUCKET);
         Bukkit.addRecipe(recipe);
