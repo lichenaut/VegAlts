@@ -90,6 +90,6 @@ public class VASpecialCraftListener implements Listener {
                 }
             } else forceItem(e, p, bottle);
         } else if (VASpecialCraftReference.getDehydraters().contains(e.getRecipe().getResult().getType())) {forceItem(e, p, new ItemStack(Material.GLASS_BOTTLE));//empty a water bottle
-        } else if (VASpecialCraftReference.getPurifiers().contains(e.getRecipe().getResult().getType())) {for (int i = 0; i < bottleneck; i++) forceItem(e, p, new ItemStack(Material.POTATO));}//'scrape the poison off a potato'
+        } else if (VASpecialCraftReference.getPurifiers().contains(e.getRecipe().getResult().getType())) {for (int i = 0; i < bottleneck; i++) forceItem(e, p, new ItemStack(Material.POTATO));}//scrape the poison off a potato
     }
 }
