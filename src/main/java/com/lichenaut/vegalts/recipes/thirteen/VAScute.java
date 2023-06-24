@@ -14,13 +14,21 @@ public class VAScute {
     public VAScute(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_scute"), new ItemStack(Material.SCUTE))
+        ShapedRecipe recipe1 = new ShapedRecipe(new NamespacedKey(plugin, "veg_scute_1"), new ItemStack(Material.SCUTE))
                 .shape(
-                        "KKK",
+                        "BBB",
                         "KBK",
                         "KKK")
                 .setIngredient('K', Material.KELP)
                 .setIngredient('B', Material.BONE);
-        Bukkit.addRecipe(recipe);
+        Bukkit.addRecipe(recipe1);
+        ShapedRecipe recipe2 = new ShapedRecipe(new NamespacedKey(plugin, "veg_scute_2"), new ItemStack(Material.SCUTE))
+                .shape(
+                        "KKK",
+                        "KBK",
+                        "BBB")
+                .setIngredient('K', Material.KELP)
+                .setIngredient('B', Material.BONE);
+        Bukkit.addRecipe(recipe2);
     }
 }

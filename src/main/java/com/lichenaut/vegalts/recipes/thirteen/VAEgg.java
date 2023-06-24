@@ -4,18 +4,20 @@ import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
-public class VASlime {
+public class VAEgg {
 
     private final VegAlts plugin;
 
-    public VASlime(VegAlts plugin) {this.plugin = plugin;}
+    public VAEgg(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
         ItemStack bottle = new ItemStack(Material.POTION, 1);
@@ -24,12 +26,16 @@ public class VASlime {
         pmeta.setBasePotionData(new PotionData(PotionType.WATER));
         bottle.setItemMeta(meta);
 
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "slime_ball"), new ItemStack(Material.SLIME_BALL))
-                .addIngredient(bottle)
-                .addIngredient(Material.WHEAT)
-                .addIngredient(Material.SUGAR)
-                .addIngredient(Material.CLAY_BALL)
-                .addIngredient(Material.LIME_DYE);
+        ItemStack egg = new ItemStack(Material.EGG, 1);
+        ItemMeta eggMeta = egg.getItemMeta();
+        eggMeta.setCustomModelData(1);
+        eggMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        egg.setItemMeta(eggMeta);
+
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_egg"), egg)
+                .addIngredient(1, bottle)
+                .addIngredient(1, Material.WHEAT)
+                .addIngredient(new RecipeChoice.MaterialChoice(Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS, Material.BEETROOT_SEEDS));
         Bukkit.addRecipe(recipe);
     }
 }

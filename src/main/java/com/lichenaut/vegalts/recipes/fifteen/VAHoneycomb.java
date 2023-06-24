@@ -1,4 +1,4 @@
-package com.lichenaut.vegalts.recipes.thirteen;
+package com.lichenaut.vegalts.recipes.fifteen;
 
 import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Bukkit;
@@ -11,25 +11,25 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
-public class VASlime {
+public class VAHoneycomb {
 
     private final VegAlts plugin;
 
-    public VASlime(VegAlts plugin) {this.plugin = plugin;}
+    public VAHoneycomb(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
         ItemStack bottle = new ItemStack(Material.POTION, 1);
         ItemMeta meta = bottle.getItemMeta();
         PotionMeta pmeta = (PotionMeta) meta;
-        pmeta.setBasePotionData(new PotionData(PotionType.WATER));
+        PotionData pdata = new PotionData(PotionType.WATER);
+        pmeta.setBasePotionData(pdata);
         bottle.setItemMeta(meta);
 
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "slime_ball"), new ItemStack(Material.SLIME_BALL))
-                .addIngredient(bottle)
-                .addIngredient(Material.WHEAT)
-                .addIngredient(Material.SUGAR)
-                .addIngredient(Material.CLAY_BALL)
-                .addIngredient(Material.LIME_DYE);
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_honeycomb"), new ItemStack(Material.HONEYCOMB))
+                .addIngredient(1, bottle)
+                .addIngredient(1, Material.SUGAR)
+                .addIngredient(1, Material.PAPER)
+                .addIngredient(1, Material.YELLOW_DYE);
         Bukkit.addRecipe(recipe);
     }
 }

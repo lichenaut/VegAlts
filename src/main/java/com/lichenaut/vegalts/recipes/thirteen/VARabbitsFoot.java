@@ -7,16 +7,16 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
 
-public class VAFeather {
+public class VARabbitsFoot {
 
     private final VegAlts plugin;
 
-    public VAFeather(VegAlts plugin) {this.plugin = plugin;}
+    public VARabbitsFoot(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_feather"), new ItemStack(Material.FEATHER))
-                .addIngredient(Material.STICK)
-                .addIngredient(Material.PAPER);
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_rabbits_foot"), new ItemStack(Material.RABBIT_FOOT).add())
+                .addIngredient(1, Material.RABBIT_HIDE)
+                .addIngredient(1, Material.BONE);
         Bukkit.addRecipe(recipe);
     }
 }

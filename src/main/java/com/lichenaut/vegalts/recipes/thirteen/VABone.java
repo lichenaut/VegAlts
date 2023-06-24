@@ -21,10 +21,10 @@ public class VABone {
                         "B")
                 .setIngredient('B', Material.BONE_MEAL);
         Bukkit.addRecipe(recipeVert);
-        ShapedRecipe recipeHorz1 = new ShapedRecipe(new NamespacedKey(plugin, "bonemeal_line_horizontal"), new ItemStack(Material.BONE))
+        ShapedRecipe recipeHorz = new ShapedRecipe(new NamespacedKey(plugin, "bonemeal_line_horizontal"), new ItemStack(Material.BONE))
                 .shape("BBB")
                 .setIngredient('B', Material.BONE_MEAL);
-        Bukkit.addRecipe(recipeHorz1);
+        Bukkit.addRecipe(recipeHorz);
         ShapedRecipe recipeDiag1 = new ShapedRecipe(new NamespacedKey(plugin, "bonemeal_line_diagonal_1"), new ItemStack(Material.BONE))
                 .shape(
                         "B  ",
