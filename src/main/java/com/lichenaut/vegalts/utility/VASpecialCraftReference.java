@@ -12,17 +12,17 @@ public class VASpecialCraftReference {
         return containerConsumers;
     }
 
+    public static HashSet<Material> getDehydraters() {
+        HashSet<Material> dehydraters = new HashSet<>();
+        dehydraters.add(Material.HONEYCOMB);
+        return dehydraters;
+    }
+
     public static HashSet<Material> getHydraters() {
         HashSet<Material> hydraters = new HashSet<>();
         hydraters.add(Material.LEATHER);
         hydraters.add(Material.RABBIT_HIDE);
         return hydraters;
-    }
-
-    public static HashSet<Material> getDehydraters() {
-        HashSet<Material> dehydraters = new HashSet<>();
-        dehydraters.add(Material.HONEYCOMB);
-        return dehydraters;
     }
 
     public static HashSet<Material> getPurifiers() {

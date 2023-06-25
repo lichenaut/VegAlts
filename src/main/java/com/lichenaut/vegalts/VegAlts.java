@@ -14,6 +14,8 @@ public final class VegAlts extends JavaPlugin {
 
     private final VegAlts plugin = this;
 
+    private int version;
+
     @Override
     public void onEnable() {
         Logger log = getLogger();
@@ -29,14 +31,15 @@ public final class VegAlts extends JavaPlugin {
         } else {
             //new VAUpdateChecker(this, plugin).getVersion(version -> {if (!this.getDescription().getVersion().equals(version)) {getLog().info("Update available.");}});
 
-            int version = Integer.parseInt(Bukkit.getServer().getBukkitVersion().split("-")[0].split(Pattern.quote("."))[1]);
+            version = Integer.parseInt(Bukkit.getServer().getBukkitVersion().split("-")[0].split(Pattern.quote("."))[1]);
 
             if (version >= 13) {new VARecipeAdder(plugin).addRecipes(version);
             } else {log.severe("Unsupported version detected: " + Bukkit.getServer().getBukkitVersion() + "!");}
 
-            Bukkit.getPluginManager().registerEvents(new VASpecialCraftListener(), this);
+            Bukkit.getPluginManager().registerEvents(new VASpecialCraftListener(plugin), this);
             Bukkit.getPluginManager().registerEvents(new VAVegEggThrowListener(), this);
         }
-
     }
+
+    public int getVersion() {return version;}
 }

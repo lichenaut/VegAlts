@@ -4,10 +4,7 @@ import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.FurnaceRecipe;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.inventory.SmokingRecipe;
+import org.bukkit.inventory.*;
 
 public class VALeather {
 
@@ -29,5 +26,7 @@ public class VALeather {
         Bukkit.addRecipe(furnaceRecipe);
         SmokingRecipe smokingRecipe = new SmokingRecipe(new NamespacedKey(plugin, "veg_leather_smoker"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 100);
         Bukkit.addRecipe(smokingRecipe);
+        CampfireRecipe campfireRecipe = new CampfireRecipe(new NamespacedKey(plugin, "veg_leather_campfire"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 600);
+        Bukkit.addRecipe(campfireRecipe);
     }
 }
