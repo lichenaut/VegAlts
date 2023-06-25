@@ -18,7 +18,7 @@ public class VAHoneycomb {
     public VAHoneycomb(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ItemStack bottle = new ItemStack(Material.POTION, 1);
+        ItemStack bottle = new ItemStack(Material.POTION);
         ItemMeta meta = bottle.getItemMeta();
         PotionMeta pmeta = (PotionMeta) meta;
         PotionData pdata = new PotionData(PotionType.WATER);

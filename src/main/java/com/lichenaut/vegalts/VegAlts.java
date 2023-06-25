@@ -2,7 +2,6 @@ package com.lichenaut.vegalts;
 
 import com.lichenaut.vegalts.utility.VASpecialCraftListener;
 import com.lichenaut.vegalts.utility.VARecipeAdder;
-import com.lichenaut.vegalts.utility.VAVegEggThrowListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -37,7 +36,6 @@ public final class VegAlts extends JavaPlugin {
             } else {log.severe("Unsupported version detected: " + Bukkit.getServer().getBukkitVersion() + "!");}
 
             Bukkit.getPluginManager().registerEvents(new VASpecialCraftListener(plugin), this);
-            Bukkit.getPluginManager().registerEvents(new VAVegEggThrowListener(), this);
         }
     }
 

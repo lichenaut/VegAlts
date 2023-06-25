@@ -15,7 +15,7 @@ import java.util.Random;
 public class VABrushListener implements Listener {
 
     @EventHandler
-    public void onBrush(PlayerInteractEvent e) {
+    public void onBrushing(PlayerInteractEvent e) {
         if (e.getClickedBlock() == null || !e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || (!e.getPlayer().getInventory().getItemInMainHand().isSimilar(new ItemStack(Material.BRUSH)) && !e.getPlayer().getInventory().getItemInOffHand().isSimilar(new ItemStack(Material.BRUSH)))) return;
         Block block = e.getClickedBlock();
         boolean isSusGravel = block.getType() == Material.SUSPICIOUS_GRAVEL;

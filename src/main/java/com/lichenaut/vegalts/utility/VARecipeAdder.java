@@ -59,6 +59,7 @@ public class VARecipeAdder {
                 new VACreeperHead(plugin).addRecipe();
                 new VADragonsBreath(plugin).addRecipe();
                 new VAEgg(plugin).addRecipe();
+                Bukkit.getPluginManager().registerEvents(new VAVegEggThrowListener(), plugin);
                 new VAEnderPearl(plugin).addRecipe();
                 new VAFeather(plugin).addRecipe();
                 new VAGhastTear(plugin).addRecipe();

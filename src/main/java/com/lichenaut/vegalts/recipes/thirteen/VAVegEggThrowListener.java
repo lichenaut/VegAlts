@@ -1,4 +1,4 @@
-package com.lichenaut.vegalts.utility;
+package com.lichenaut.vegalts.recipes.thirteen;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;

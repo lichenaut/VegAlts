@@ -16,9 +16,9 @@ public class VAPlayerHead {
     public void addRecipe() {
         ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_player_head"), new ItemStack(Material.PLAYER_HEAD))
                 .shape(
-                        " L ",
+                        "LLL",
                         "LSL",
-                        " L ")
+                        "LLL")
                 .setIngredient('S', Material.SKELETON_SKULL)
                 .setIngredient('L', Material.LEATHER);
         Bukkit.addRecipe(recipe);
