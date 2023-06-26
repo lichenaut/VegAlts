@@ -25,17 +25,17 @@ public final class VegAlts extends JavaPlugin {
         //int pluginId = ?????;
         //Metrics metrics = new Metrics(plugin, pluginId);
 
-        if (config.getBoolean("disable-plugin")) {
-            log.info("Plugin disabled in config.yml.");
-        } else {
+        if (config.getBoolean("disable-plugin")) log.info("Plugin disabled in config.yml.");
+        else {
             //new VAUpdateChecker(this, plugin).getVersion(version -> {if (!this.getDescription().getVersion().equals(version)) {getLog().info("Update available.");}});
 
-            version = Integer.parseInt(Bukkit.getServer().getBukkitVersion().split("-")[0].split(Pattern.quote("."))[1]);
+            String sVersion = Bukkit.getServer().getBukkitVersion();
+            version = Integer.parseInt(sVersion.split("-")[0].split(Pattern.quote("."))[1]);
 
-            if (version >= 13) {new VARecipeAdder(plugin).addRecipes(version);
-            } else {log.severe("Unsupported version detected: " + Bukkit.getServer().getBukkitVersion() + "!");}
-
-            Bukkit.getPluginManager().registerEvents(new VASpecialCraftListener(plugin), this);
+            if (version >= 13) {
+                new VARecipeAdder(plugin).addRecipes(version);
+                Bukkit.getPluginManager().registerEvents(new VASpecialCraftListener(plugin), this);
+            } else log.severe("Unsupported version detected: " + sVersion + "! Disabling plugin.");
         }
     }
 

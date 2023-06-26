@@ -1,2 +1,19 @@
 #Turn VegAlts off.
 disable-plugin: false
+
+#Crafting recipes for passive mob products.
+passive-recipes: true
+#Crafting recipes for neutral mob products.
+neutral-recipes: true
+#Crafting recipes for hostile mob products.
+hostile-recipes: true
+
+#Individual passive recipes.
+
+
+#Individual neutral recipes.
+
+
+#Individual hostile recipes.
+
+

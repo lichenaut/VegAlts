@@ -24,7 +24,7 @@ public class VASlime {
         pmeta.setBasePotionData(new PotionData(PotionType.WATER));
         bottle.setItemMeta(meta);
 
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "slime_ball"), new ItemStack(Material.SLIME_BALL))
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_slime_ball"), new ItemStack(Material.SLIME_BALL))
                 .addIngredient(bottle)
                 .addIngredient(Material.WHEAT)
                 .addIngredient(Material.SUGAR)

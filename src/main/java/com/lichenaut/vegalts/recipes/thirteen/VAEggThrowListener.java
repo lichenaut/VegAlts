@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class VAVegEggThrowListener implements Listener {
+public class VAEggThrowListener implements Listener {
 
     @EventHandler
     public void onVegEggThrow(PlayerEggThrowEvent e) {//fake eggs do not hatch

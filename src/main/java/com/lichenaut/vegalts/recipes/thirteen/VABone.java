@@ -14,25 +14,25 @@ public class VABone {
     public VABone(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapedRecipe recipeVert = new ShapedRecipe(new NamespacedKey(plugin, "bonemeal_line_vertical"), new ItemStack(Material.BONE))
+        ShapedRecipe recipeVert = new ShapedRecipe(new NamespacedKey(plugin, "veg_bone_vertical"), new ItemStack(Material.BONE))
                 .shape(
                         "B",
                         "B",
                         "B")
                 .setIngredient('B', Material.BONE_MEAL);
         Bukkit.addRecipe(recipeVert);
-        ShapedRecipe recipeHorz = new ShapedRecipe(new NamespacedKey(plugin, "bonemeal_line_horizontal"), new ItemStack(Material.BONE))
+        ShapedRecipe recipeHorz = new ShapedRecipe(new NamespacedKey(plugin, "veg_bone_horizontal"), new ItemStack(Material.BONE))
                 .shape("BBB")
                 .setIngredient('B', Material.BONE_MEAL);
         Bukkit.addRecipe(recipeHorz);
-        ShapedRecipe recipeDiag1 = new ShapedRecipe(new NamespacedKey(plugin, "bonemeal_line_diagonal_1"), new ItemStack(Material.BONE))
+        ShapedRecipe recipeDiag1 = new ShapedRecipe(new NamespacedKey(plugin, "veg_bone_diagonal_1"), new ItemStack(Material.BONE))
                 .shape(
                         "B  ",
                         " B ",
                         "  B")
                 .setIngredient('B', Material.BONE_MEAL);
         Bukkit.addRecipe(recipeDiag1);
-        ShapedRecipe recipeDiag2 = new ShapedRecipe(new NamespacedKey(plugin, "bonemeal_line_diagonal_2"), new ItemStack(Material.BONE))
+        ShapedRecipe recipeDiag2 = new ShapedRecipe(new NamespacedKey(plugin, "veg_bone_diagonal_2"), new ItemStack(Material.BONE))
                 .shape(
                         "  B",
                         " B ",

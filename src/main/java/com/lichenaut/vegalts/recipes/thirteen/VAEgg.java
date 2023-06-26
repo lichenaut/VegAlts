@@ -20,13 +20,13 @@ public class VAEgg {
     public VAEgg(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ItemStack bottle = new ItemStack(Material.POTION, 1);
+        ItemStack bottle = new ItemStack(Material.POTION);
         ItemMeta meta = bottle.getItemMeta();
         PotionMeta pmeta = (PotionMeta) meta;
         pmeta.setBasePotionData(new PotionData(PotionType.WATER));
         bottle.setItemMeta(meta);
 
-        ItemStack egg = new ItemStack(Material.EGG, 1);
+        ItemStack egg = new ItemStack(Material.EGG);
         ItemMeta eggMeta = egg.getItemMeta();
         eggMeta.setCustomModelData(1);
         eggMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
