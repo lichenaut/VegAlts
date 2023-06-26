@@ -4,17 +4,16 @@ import com.lichenaut.vegalts.VegAlts;
 import com.lichenaut.vegalts.recipes.eighteen.VAGoatHorn18;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneyBottle;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneycomb;
-import com.lichenaut.vegalts.recipes.nineteen.VAFroglightOchre;
-import com.lichenaut.vegalts.recipes.nineteen.VAFroglightPearlescent;
-import com.lichenaut.vegalts.recipes.nineteen.VAFroglightVerdant;
-import com.lichenaut.vegalts.recipes.nineteen.VAGoatHorn19;
+import com.lichenaut.vegalts.recipes.nineteen.*;
 import com.lichenaut.vegalts.recipes.seventeen.VABlazeRod17;
 import com.lichenaut.vegalts.recipes.seventeen.VAGlowInkSac;
 import com.lichenaut.vegalts.recipes.seventeen.VAGoatHorn17;
 import com.lichenaut.vegalts.recipes.seventeen.VAShulkerShell17;
+import com.lichenaut.vegalts.recipes.sixteen.VAFishingListener16;
 import com.lichenaut.vegalts.recipes.sixteen.VANetherStar16;
 import com.lichenaut.vegalts.recipes.thirteen.*;
 import com.lichenaut.vegalts.recipes.twenty.VABrushListener;
+import com.lichenaut.vegalts.recipes.twenty.VAFishingListener20;
 import com.lichenaut.vegalts.recipes.twenty.VAPiglinHead;
 import org.bukkit.Bukkit;
 
@@ -31,8 +30,10 @@ public class VARecipeAdder {
         for (int i = version; i > 0; i--) {
             if (i == 20) {
                 Bukkit.getPluginManager().registerEvents(new VABrushListener(), plugin);
+                if (addedRecipies.add("vegFishing")) Bukkit.getPluginManager().registerEvents(new VAFishingListener20(), plugin);
                 new VAPiglinHead(plugin).addRecipe();
             } else if (i == 19) {
+                if (addedRecipies.add("vegFishing")) Bukkit.getPluginManager().registerEvents(new VAFishingListener19(), plugin);
                 new VAFroglightOchre(plugin).addRecipe();
                 new VAFroglightPearlescent(plugin).addRecipe();
                 new VAFroglightVerdant(plugin).addRecipe();
@@ -45,6 +46,7 @@ public class VARecipeAdder {
                 if (addedRecipies.add("vegGoatHorn")) new VAGoatHorn17(plugin).addRecipe();
                 if (addedRecipies.add("vegShulkerShell")) new VAShulkerShell17(plugin).addRecipe();
             } else if (i == 16) {
+                if (addedRecipies.add("vegFishing")) Bukkit.getPluginManager().registerEvents(new VAFishingListener16(), plugin);
                 if (addedRecipies.add("vegNetherStar")) new VANetherStar16(plugin).addRecipe();
             } else if (i == 15) {
                 new VAHoneyBottle(plugin).addRecipe();
@@ -62,6 +64,7 @@ public class VARecipeAdder {
                 Bukkit.getPluginManager().registerEvents(new VAVegEggThrowListener(), plugin);
                 new VAEnderPearl(plugin).addRecipe();
                 new VAFeather(plugin).addRecipe();
+                if (addedRecipies.add("vegFishing")) Bukkit.getPluginManager().registerEvents(new VAFishingListener13(), plugin);
                 new VAGhastTear(plugin).addRecipe();
                 new VAGunpowder(plugin).addRecipe();
                 new VAInkSac(plugin).addRecipe();
