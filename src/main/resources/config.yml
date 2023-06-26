@@ -1,19 +1,77 @@
 #Turn VegAlts off.
 disable-plugin: false
 
-#Crafting recipes for passive mob products.
-passive-recipes: true
-#Crafting recipes for neutral mob products.
-neutral-recipes: true
-#Crafting recipes for hostile mob products.
-hostile-recipes: true
 
-#Individual passive recipes.
+###############
+#Recipe Toggle#
+###############
+
+beef: true
+blaze-rod: true
+bone: true
+bone-meal: true
+chicken: true
+cod: true
+creeper-head: true
+dragons-breath: true
+egg: true
+ender-pearl: true
+feather: true
+ghast-tear: true
+glow-ink-sac: true
+goat-horn: true
+gunpowder: true
+honey-bottle: true
+honeycomb: true
+ink-sac: true
+leather: true
+milk: true
+mutton: true
+nautilus-shell: true
+nether-star: true
+nether-wart: true
+ochre-froglight: true
+pearlescent-froglight: true
+phantom-membrane: true
+piglin-head: true
+player-head: true
+porkchop: true
+pufferfish: true
+rabbit: true
+rabbit-hide: true
+rabbits-foot: true
+salmon: true
+scute: true
+shulker-shell: true
+skeleton-skull: true
+slimeball: true
+spider-eye: true
+string: true
+tropical-fish: true
+verdant-froglight: true
+zombie-head: true
 
 
-#Individual neutral recipes.
+###############
+#Miscellaneous#
+###############
 
+#Toggle whether vegan fishing applies to everyone.
+  #Permission for individual vegan fishing: vegalts.fishing
+global-vegan-fishing: false
+  #Permission to disable individual vegan fishing when the global setting is true: vegalts.fishing.disabled
 
-#Individual hostile recipes.
+#Toggle whether vegan archaeology applies to everyone.
+  #Permission for individual vegan archaeology: vegalts.archaeology
+global-vegan-archaeology: false
+  #Permission to disable individual vegan archaeology when the global setting is true: vegalts.archaeology.disabled
 
+#Toggle whether mining infested blocks spawns silverfish.
+  #Individual permission: vegalts.infested
+global-infested-spawning-off: false
+  #Individual disable permission: vegalts.infested.disabled
 
+#Toggle whether player head crafting results in the default player head or the head of the player who crafted it.
+  #Individual permission: vegalts.playerhead
+global-unique-playerhead: false
+  #Individual disable permission: vegalts.playerhead.disabled

@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.MusicInstrumentMeta;
 import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
@@ -47,6 +48,18 @@ public class VASpecialCraftListener implements Listener {
             }
         }
         return slime && music && dye && stone;
+    }
+
+    private boolean hasHeadRecipe(CraftItemEvent e) {//valid head recipe?
+        int leatherCount = 0;
+        boolean skull = false;
+        for (ItemStack is : e.getInventory().getMatrix()) {
+            if (is != null) {
+                if (is.isSimilar(new ItemStack(Material.LEATHER))) leatherCount++;
+                else if (is.isSimilar(new ItemStack(Material.SKELETON_SKULL))) skull = true;
+            }
+        }
+        return leatherCount == 8 && skull;
     }
 
     private boolean giveItem(CraftItemEvent e, Player p, ItemStack item) {//used in getting rid of empty bucket when crafting fake milk
@@ -91,16 +104,16 @@ public class VASpecialCraftListener implements Listener {
         assert p != null;
         int bottleneck = getBottleneck(e);
         int version = plugin.getVersion();
-        ItemStack result = new ItemStack(Objects.requireNonNull(e.getCurrentItem()));
-        if (VASpecialCraftReference.getContainerConsumers().contains(e.getRecipe().getResult().getType())) {//get rid of old bucket when crafting fake milk
+        ItemStack result = new ItemStack(e.getRecipe().getResult());
+        if (VASpecialCraftReference.getContainerConsumers().contains(result.getType())) {//get rid of old bucket when crafting fake milk
             if (e.getClick().isShiftClick()) {
                 if (!giveItem(e, p, result)) clearCraftInventory(e);
             } else {
                 ((HumanEntity) Objects.requireNonNull(e.getInventory().getHolder())).setItemOnCursor(result);
                 clearCraftInventory(e);
             }
-        } else if (version >= 15 && VASpecialCraftReference.getDehydraters().contains(e.getRecipe().getResult().getType())) {forceItem(e, p, new ItemStack(Material.GLASS_BOTTLE));//empty a water bottle
-        } else if (VASpecialCraftReference.getHydraters().contains(e.getRecipe().getResult().getType())) {//fill containers with water when crafting leather
+        } else if (version >= 15 && VASpecialCraftReference.getDehydraters().contains(result.getType())) {forceItem(e, p, new ItemStack(Material.GLASS_BOTTLE));//empty a water bottle
+        } else if (VASpecialCraftReference.getHydraters().contains(result.getType())) {//fill containers with water when crafting leather
             ItemStack[] inventory = p.getInventory().getContents();
 
             boolean hasBucket = false;//find the location of an empty bucket in player inventory
@@ -128,8 +141,8 @@ public class VASpecialCraftListener implements Listener {
                     } else {for (int i = 0; i < bottleneck; i++) {forceItem(e, p, bottle);}}//fill many bottles
                 }
             } else forceItem(e, p, bottle);
-        } else if (VASpecialCraftReference.getPurifiers().contains(e.getRecipe().getResult().getType())) {for (int i = 0; i < bottleneck; i++) forceItem(e, p, new ItemStack(Material.POTATO));//scrape the poison off a potato
-        } else if (version >= 17 && e.getRecipe().getResult().isSimilar(new ItemStack(Material.GOAT_HORN))) {
+        } else if (VASpecialCraftReference.getPurifiers().contains(result.getType())) {for (int i = 0; i < bottleneck; i++) forceItem(e, p, new ItemStack(Material.POTATO));//scrape the poison off a potato
+        } else if (version >= 17 && result.isSimilar(new ItemStack(Material.GOAT_HORN))) {
             Random rand = new Random();
             if (version == 17 || version == 18) {bottleneck *= 4;}
 
@@ -186,6 +199,26 @@ public class VASpecialCraftListener implements Listener {
 
             e.setCancelled(true);
             if (!hasHornRecipe(e, version)) e.getInventory().setItem(0, null);
+        } else if (result.isSimilar(new ItemStack(Material.PLAYER_HEAD))) {
+            if ((p.hasPermission("vegalts.playerhead") || plugin.getPluginConfig().getBoolean("global-unique-playerhead")) && !p.hasPermission("vegalts.playerhead.disabled")) {
+                ItemStack playerSkull = new ItemStack(Material.PLAYER_HEAD);
+                SkullMeta meta = (SkullMeta) playerSkull.getItemMeta();
+                meta.setOwningPlayer(p);
+                playerSkull.setItemMeta(meta);
+
+                if (e.getClick().isShiftClick()) {
+                    for (int i = 0; i < bottleneck; i++) {
+                        subtractCraftInventory(e);
+                        forceItem(e, p, playerSkull);
+                    }
+                } else {
+                    subtractCraftInventory(e);
+                    ((HumanEntity) Objects.requireNonNull(e.getInventory().getHolder())).setItemOnCursor(playerSkull);
+                }
+
+                e.setCancelled(true);
+                if (!hasHeadRecipe(e)) e.getInventory().setItem(0, null);
+            }
         }
     }
 }

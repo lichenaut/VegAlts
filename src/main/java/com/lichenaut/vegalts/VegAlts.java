@@ -13,6 +13,8 @@ public final class VegAlts extends JavaPlugin {
 
     private final VegAlts plugin = this;
 
+    private final Configuration config = getConfig();
+
     private int version;
 
     @Override
@@ -20,7 +22,6 @@ public final class VegAlts extends JavaPlugin {
         Logger log = getLogger();
         getConfig().options().copyDefaults();
         saveDefaultConfig();
-        Configuration config = getConfig();
 
         //int pluginId = ?????;
         //Metrics metrics = new Metrics(plugin, pluginId);
@@ -39,5 +40,6 @@ public final class VegAlts extends JavaPlugin {
         }
     }
 
+    public Configuration getPluginConfig() {return config;}
     public int getVersion() {return version;}
 }

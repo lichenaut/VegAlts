@@ -1,8 +1,10 @@
 package com.lichenaut.vegalts.recipes.twenty;
 
+import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BrushableBlock;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -14,9 +16,14 @@ import java.util.Random;
 
 public class VABrushListener implements Listener {
 
+    private final VegAlts plugin;
+
+    public VABrushListener(VegAlts plugin) {this.plugin = plugin;}
+
     @EventHandler
     public void onBrushing(PlayerInteractEvent e) {
-        if (e.getClickedBlock() == null || !e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || (!e.getPlayer().getInventory().getItemInMainHand().isSimilar(new ItemStack(Material.BRUSH)) && !e.getPlayer().getInventory().getItemInOffHand().isSimilar(new ItemStack(Material.BRUSH)))) return;
+        Player p = e.getPlayer();
+        if (e.getClickedBlock() == null || !e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || (!e.getPlayer().getInventory().getItemInMainHand().isSimilar(new ItemStack(Material.BRUSH)) && !e.getPlayer().getInventory().getItemInOffHand().isSimilar(new ItemStack(Material.BRUSH))) || (!p.hasPermission("vegalts.archaeology") && !plugin.getPluginConfig().getBoolean("global-vegan-archaeology")) || p.hasPermission("vegalts.archaeology.disabled")) return;
         Block block = e.getClickedBlock();
         boolean isSusGravel = block.getType() == Material.SUSPICIOUS_GRAVEL;
         boolean isSusSand = block.getType() == Material.SUSPICIOUS_SAND;

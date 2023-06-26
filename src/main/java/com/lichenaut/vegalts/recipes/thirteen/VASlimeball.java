@@ -11,11 +11,11 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
-public class VASlime {
+public class VASlimeball {
 
     private final VegAlts plugin;
 
-    public VASlime(VegAlts plugin) {this.plugin = plugin;}
+    public VASlimeball(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
         ItemStack bottle = new ItemStack(Material.POTION);
