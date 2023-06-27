@@ -127,7 +127,7 @@ public class VASpecialCraftListener implements Listener {
                 }
             }
 
-            ItemStack bottle = new ItemStack(Material.POTION, 1);
+            ItemStack bottle = new ItemStack(Material.POTION);
             ItemMeta meta = bottle.getItemMeta();
             PotionMeta pmeta = (PotionMeta) meta;
             pmeta.setBasePotionData(new PotionData(PotionType.WATER));

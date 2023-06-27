@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 
 public class VAPlayerHead {
@@ -20,7 +21,7 @@ public class VAPlayerHead {
                         "LSL",
                         "LLL")
                 .setIngredient('S', Material.SKELETON_SKULL)
-                .setIngredient('L', Material.LEATHER);
+                .setIngredient('L', new RecipeChoice.MaterialChoice(Material.LEATHER, Material.RABBIT_HIDE));
         Bukkit.addRecipe(recipe);
     }
 }

@@ -17,6 +17,7 @@ public class VAZombieHead {
         Material greenDye = Material.CACTUS_GREEN;
         if (Material.getMaterial("GREEN_DYE") != null) greenDye = Material.getMaterial("GREEN_DYE");
 
+        assert greenDye != null;
         ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_zombie_head"), new ItemStack(Material.ZOMBIE_HEAD))
                 .shape(
                         "DFD",

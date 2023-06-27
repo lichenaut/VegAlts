@@ -18,7 +18,7 @@ public class VAHoneycomb {
                 .addIngredient(1, Material.POTION, -1)
                 .addIngredient(1, Material.SUGAR)
                 .addIngredient(1, Material.PAPER)
-                .addIngredient(1, Material.getMaterial("YELLOW_DYE"));
+                .addIngredient(1, Material.ORANGE_DYE);
         Bukkit.addRecipe(recipe);
     }
 }
