@@ -14,7 +14,7 @@ public class VAGlowInkSac {
     public VAGlowInkSac(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_glow_ink_sac"), new ItemStack(Material.GLOW_INK_SAC))
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_glow_ink_sac"), new ItemStack(Material.getMaterial("GLOW_INK_SAC")))
                 .addIngredient(Material.INK_SAC)
                 .addIngredient(Material.GLOWSTONE_DUST);
         Bukkit.addRecipe(recipe);

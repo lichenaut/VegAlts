@@ -14,11 +14,11 @@ public class VAFroglightVerdant {
     public VAFroglightVerdant(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_verdant_froglight"), new ItemStack(Material.VERDANT_FROGLIGHT))
-                .addIngredient(1, Material.SHROOMLIGHT)
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_verdant_froglight"), new ItemStack(Material.getMaterial("VERDANT_FROGLIGHT")))
+                .addIngredient(1, Material.getMaterial("SHROOMLIGHT"))
                 .addIngredient(1, Material.SLIME_BALL)
                 .addIngredient(1, Material.MAGMA_CREAM)
-                .addIngredient(1, Material.GREEN_DYE);
+                .addIngredient(1, Material.getMaterial("GREEN_DYE"));
         Bukkit.addRecipe(recipe);
     }
 }

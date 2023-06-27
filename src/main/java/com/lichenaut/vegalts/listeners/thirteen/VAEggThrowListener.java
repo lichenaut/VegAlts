@@ -14,10 +14,9 @@ public class VAEggThrowListener implements Listener {
     public void onVegEggThrow(PlayerEggThrowEvent e) {//fake eggs do not hatch
         ItemStack egg = new ItemStack(Material.EGG, 1);
         ItemMeta eggMeta = egg.getItemMeta();
-        eggMeta.setCustomModelData(1);
         eggMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         egg.setItemMeta(eggMeta);
 
-        if (e.getEgg().getItem().equals(egg)) {e.setHatching(false);}
+        if (((ItemStack) e.getEgg()).isSimilar(egg)) {e.setHatching(false);}
     }
 }

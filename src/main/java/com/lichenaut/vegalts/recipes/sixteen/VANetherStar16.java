@@ -20,7 +20,7 @@ public class VANetherStar16 {
                         "SES",
                         "ECE",
                         "SES")
-                .setIngredient('S', new RecipeChoice.MaterialChoice(Material.SOUL_SAND, Material.SOUL_SOIL))
+                .setIngredient('S', new RecipeChoice.MaterialChoice(Material.SOUL_SAND, Material.getMaterial("SOUL_SOIL")))
                 .setIngredient('E', Material.END_CRYSTAL)
                 .setIngredient('C', Material.CONDUIT);
         Bukkit.addRecipe(recipe);

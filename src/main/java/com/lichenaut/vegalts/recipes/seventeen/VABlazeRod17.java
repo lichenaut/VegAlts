@@ -20,7 +20,7 @@ public class VABlazeRod17 {
                         "GDG",
                         "GRG",
                         "GDG")
-                .setIngredient('R', new RecipeChoice.MaterialChoice(Material.IRON_BARS, Material.LIGHTNING_ROD))
+                .setIngredient('R', new RecipeChoice.MaterialChoice(Material.IRON_BARS, Material.getMaterial("LIGHTNING_ROD")))
                 .setIngredient('D', Material.GLOWSTONE_DUST)
                 .setIngredient('G', Material.GUNPOWDER);
         Bukkit.addRecipe(recipe);

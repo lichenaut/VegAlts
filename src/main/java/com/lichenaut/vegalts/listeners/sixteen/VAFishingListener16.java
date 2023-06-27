@@ -65,7 +65,7 @@ public class VAFishingListener16 implements Listener {
         Entity caughtEntity = e.getCaught();
         if (caughtEntity != null && (p.hasPermission("vegalts.fishing") || plugin.getPluginConfig().getBoolean("global-vegan-fishing")) && !p.hasPermission("vegalts.fishing.disabled")) {
             Material caught = ((Item) caughtEntity).getItemStack().getType();
-            if (caught != Material.BAMBOO && caught != Material.COCOA_BEANS) {
+            if (caught != Material.getMaterial("BAMBOO") && caught != Material.COCOA_BEANS) {
                 Random rand = new Random();
                 if (VAFishingReference.getFish().contains(caught)) {
                     int n = rand.nextInt(22);

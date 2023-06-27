@@ -19,7 +19,7 @@ public class VAShulkerShell17 {
                         "AAA",
                         "AAA",
                         "R R")
-                .setIngredient('A', Material.AMETHYST_CLUSTER)
+                .setIngredient('A', Material.getMaterial("AMETHYST_CLUSTER"))
                 .setIngredient('R', Material.END_ROD);
         Bukkit.addRecipe(recipe);
     }

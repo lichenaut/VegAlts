@@ -25,7 +25,7 @@ public class VASlimeball {
         bottle.setItemMeta(meta);
 
         ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_slime_ball"), new ItemStack(Material.SLIME_BALL))
-                .addIngredient(bottle)
+                .addIngredient(1, Material.POTION, -1)
                 .addIngredient(Material.WHEAT)
                 .addIngredient(Material.SUGAR)
                 .addIngredient(Material.CLAY_BALL)

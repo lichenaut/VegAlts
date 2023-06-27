@@ -37,6 +37,7 @@ public final class VegAlts extends JavaPlugin {
                 Objects.requireNonNull(getCommand("va")).setExecutor(new VACommand(plugin));
                 Objects.requireNonNull(getCommand("va")).setTabCompleter(new VATabCompleter());
                 new VARecipeAdder(plugin).addRecipes(version);
+                
             } else log.severe("Unsupported version detected: " + sVersion + "! Disabling plugin.");
         }
     }

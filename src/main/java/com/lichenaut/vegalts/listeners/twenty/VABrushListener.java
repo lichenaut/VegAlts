@@ -23,20 +23,20 @@ public class VABrushListener implements Listener {
     @EventHandler
     public void onBrushing(PlayerInteractEvent e) {
         Player p = e.getPlayer();
-        if (e.getClickedBlock() == null || !e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || (!e.getPlayer().getInventory().getItemInMainHand().isSimilar(new ItemStack(Material.BRUSH)) && !e.getPlayer().getInventory().getItemInOffHand().isSimilar(new ItemStack(Material.BRUSH))) || (!p.hasPermission("vegalts.archaeology") && !plugin.getPluginConfig().getBoolean("global-vegan-archaeology")) || p.hasPermission("vegalts.archaeology.disabled")) return;
+        if (e.getClickedBlock() == null || !e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || (!e.getPlayer().getInventory().getItemInMainHand().isSimilar(new ItemStack(Material.getMaterial("BRUSH"))) && !e.getPlayer().getInventory().getItemInOffHand().isSimilar(new ItemStack(Material.getMaterial("BRUSH")))) || (!p.hasPermission("vegalts.archaeology") && !plugin.getPluginConfig().getBoolean("global-vegan-archaeology")) || p.hasPermission("vegalts.archaeology.disabled")) return;
         Block block = e.getClickedBlock();
-        boolean isSusGravel = block.getType() == Material.SUSPICIOUS_GRAVEL;
-        boolean isSusSand = block.getType() == Material.SUSPICIOUS_SAND;
+        boolean isSusGravel = block.getType() == Material.getMaterial("SUSPICIOUS_GRAVEL");
+        boolean isSusSand = block.getType() == Material.getMaterial("SUSPICIOUS_SAND");
         if (isSusGravel || isSusSand) {
             BrushableBlock bb = (BrushableBlock) block.getState();
-            if (Objects.equals(bb.getItem(), new ItemStack(Material.COAL)) || Objects.equals(bb.getItem(), new ItemStack(Material.SNIFFER_EGG))) {
+            if (Objects.equals(bb.getItem(), new ItemStack(Material.COAL)) || Objects.equals(bb.getItem(), new ItemStack(Material.getMaterial("SNIFFER_EGG")))) {
                 e.setCancelled(true);
                 if (isSusGravel) block.setType(Material.GRAVEL); else block.setType(Material.SAND);
 
                 Random rand = new Random();
                 int n = rand.nextInt(2);
-                if (n == 0) {block.getWorld().dropItem(block.getLocation().add(0, 1, 0), new ItemStack(Material.TORCHFLOWER_SEEDS));
-                } else {block.getWorld().dropItem(block.getLocation().add(0, 1, 0), new ItemStack(Material.PITCHER_POD));}
+                if (n == 0) block.getWorld().dropItem(block.getLocation().add(0, 1, 0), new ItemStack(Material.getMaterial("TORCHFLOWER_SEEDS")));
+                else block.getWorld().dropItem(block.getLocation().add(0, 1, 0), new ItemStack(Material.getMaterial("PITCHER_POD")));
             }
         }
     }

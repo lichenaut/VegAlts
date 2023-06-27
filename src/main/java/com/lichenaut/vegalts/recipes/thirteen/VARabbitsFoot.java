@@ -14,7 +14,7 @@ public class VARabbitsFoot {
     public VARabbitsFoot(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_rabbits_foot"), new ItemStack(Material.RABBIT_FOOT).add())
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_rabbits_foot"), new ItemStack(Material.RABBIT_FOOT, 2))
                 .addIngredient(1, Material.RABBIT_HIDE)
                 .addIngredient(1, Material.BONE);
         Bukkit.addRecipe(recipe);

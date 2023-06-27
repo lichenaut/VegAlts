@@ -6,6 +6,7 @@ import com.lichenaut.vegalts.listeners.thirteen.*;
 import com.lichenaut.vegalts.recipes.eighteen.VAGoatHorn18;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneyBottle;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneycomb;
+import com.lichenaut.vegalts.recipes.fourteen.VALeather14;
 import com.lichenaut.vegalts.recipes.nineteen.*;
 import com.lichenaut.vegalts.recipes.seventeen.VABlazeRod17;
 import com.lichenaut.vegalts.recipes.seventeen.VAGlowInkSac;
@@ -13,6 +14,7 @@ import com.lichenaut.vegalts.recipes.seventeen.VAGoatHorn17;
 import com.lichenaut.vegalts.recipes.seventeen.VAShulkerShell17;
 import com.lichenaut.vegalts.listeners.sixteen.VAFishingListener16;
 import com.lichenaut.vegalts.recipes.sixteen.VANetherStar16;
+import com.lichenaut.vegalts.recipes.sixteen.VANetherWart16;
 import com.lichenaut.vegalts.recipes.thirteen.*;
 import com.lichenaut.vegalts.listeners.twenty.VABrushListener;
 import com.lichenaut.vegalts.listeners.twenty.VAFishingListener20;
@@ -52,10 +54,13 @@ public class VARecipeAdder {
             } else if (i == 16) {
                 if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener16(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("nether-star")) if (addedRecipies.add("vegNetherStar")) new VANetherStar16(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("nether-wart")) if (addedRecipies.add("vegNetherWart")) new VANetherWart16(plugin).addRecipe();
             } else if (i == 15) {
                 if (plugin.getPluginConfig().getBoolean("honey-bottle")) new VAHoneyBottle(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("honeycomb")) new VAHoneycomb(plugin).addRecipe();
-            } else if (i == 14 || i == 13) {
+            } else if (i == 14) {
+                if (plugin.getPluginConfig().getBoolean("leather")) if (addedRecipies.add("vegLeather")) new VALeather14(plugin).addRecipe();
+            } else if (i == 13) {
                 if (plugin.getPluginConfig().getBoolean("beef")) new VABeef(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("blaze-rod")) if (addedRecipies.add("vegBlazeRod")) new VABlazeRod13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("bone")) new VABone(plugin).addRecipe();
@@ -74,12 +79,12 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("gunpowder")) new VAGunpowder(plugin).addRecipe();
                 pMan.registerEvents(new VAInfestedBlockListener(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("ink-sac")) new VAInkSac(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("leather")) new VALeather(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("leather")) if (addedRecipies.add("vegLeather")) new VALeather13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("milk")) new VAMilk(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("mutton")) new VAMutton(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("nautilus-shell")) new VANautilusShell(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("nether-star")) if (addedRecipies.add("vegNetherStar")) new VANetherStar13(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("nether-wart")) new VANetherWart(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("nether-wart")) if (addedRecipies.add("vegNetherWart")) new VANetherWart13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("phantom-membrane")) new VAPhantomMembrane(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("player-head")) new VAPlayerHead(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("porkchop")) new VAPorkchop(plugin).addRecipe();

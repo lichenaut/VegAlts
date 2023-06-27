@@ -40,12 +40,12 @@ public class VASpecialCraftListener implements Listener {
         boolean stone = false;
         for (ItemStack is : e.getInventory().getMatrix()) {
             if (is != null) {
-                if (version == 17) {if (is.isSimilar(new ItemStack(Material.MUSIC_DISC_CAT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_13)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_11)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_FAR)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_CHIRP)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_BLOCKS)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MALL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STAL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MELLOHI)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_PIGSTEP)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_WAIT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STRAD))) {music = true;continue;}
-                } else if (version == 18) {if (is.isSimilar(new ItemStack(Material.MUSIC_DISC_OTHERSIDE)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_CAT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_13)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_11)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_FAR)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_CHIRP)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_BLOCKS)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MALL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STAL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MELLOHI)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_PIGSTEP)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_WAIT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STRAD))) {music = true;continue;}
-                } else {if (is.isSimilar(new ItemStack(Material.DISC_FRAGMENT_5))) {music = true;continue;}}
+                if (version == 17) {if (is.isSimilar(new ItemStack(Material.MUSIC_DISC_CAT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_13)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_11)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_FAR)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_CHIRP)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_BLOCKS)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MALL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STAL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MELLOHI)) || is.isSimilar(new ItemStack(Material.getMaterial("MUSIC_DISC_PIGSTEP"))) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_WAIT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STRAD))) {music = true;continue;}
+                } else if (version == 18) {if (is.isSimilar(new ItemStack(Material.getMaterial("MUSIC_DISC_OTHERSIDE"))) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_CAT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_13)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_11)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_FAR)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_CHIRP)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_BLOCKS)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MALL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STAL)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_MELLOHI)) || is.isSimilar(new ItemStack(Material.getMaterial("MUSIC_DISC_PIGSTEP"))) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_WAIT)) || is.isSimilar(new ItemStack(Material.MUSIC_DISC_STRAD))) {music = true;continue;}
+                } else {if (is.isSimilar(new ItemStack(Material.getMaterial("DISC_FRAGMENT_5")))) {music = true;continue;}}
                 if (is.isSimilar(new ItemStack(Material.SLIME_BALL))) {slime = true;
-                } else if (is.isSimilar(new ItemStack(Material.BLACK_DYE))) {dye = true;
-                } else if (is.isSimilar(new ItemStack(Material.POINTED_DRIPSTONE))) stone = true;
+                } else if (is.isSimilar(new ItemStack(Material.getMaterial("BLACK_DYE")))) {dye = true;
+                } else if (is.isSimilar(new ItemStack(Material.getMaterial("POINTED_DRIPSTONE")))) stone = true;
             }
         }
         return slime && music && dye && stone;
@@ -143,7 +143,7 @@ public class VASpecialCraftListener implements Listener {
                 }
             } else forceItem(e, p, bottle);
         } else if (VASpecialCraftReference.getPurifiers().contains(result.getType())) {for (int i = 0; i < bottleneck; i++) forceItem(e, p, new ItemStack(Material.POTATO));//scrape the poison off a potato
-        } else if (version >= 17 && result.isSimilar(new ItemStack(Material.GOAT_HORN))) {
+        } else if (version >= 17 && result.isSimilar(new ItemStack(Material.getMaterial("GOAT_HORN")))) {
             Random rand = new Random();
             if (version == 17 || version == 18) {bottleneck *= 4;}
 
@@ -157,7 +157,7 @@ public class VASpecialCraftListener implements Listener {
                         }
                     }
 
-                    ItemStack goatHorn = new ItemStack(Material.GOAT_HORN);
+                    ItemStack goatHorn = new ItemStack(Material.getMaterial("GOAT_HORN"));
                     MusicInstrumentMeta meta = (MusicInstrumentMeta) goatHorn.getItemMeta();
                     if (n == 1) {meta.setInstrument(MusicInstrument.SING);
                     } else if (n == 2) {meta.setInstrument(MusicInstrument.SEEK);
@@ -181,7 +181,7 @@ public class VASpecialCraftListener implements Listener {
                     }
                 }
 
-                ItemStack goatHorn = new ItemStack(Material.GOAT_HORN);
+                ItemStack goatHorn = new ItemStack(Material.getMaterial("GOAT_HORN"));
                 MusicInstrumentMeta meta = (MusicInstrumentMeta) goatHorn.getItemMeta();
                 if (n == 1) {meta.setInstrument(MusicInstrument.SING);
                 } else if (n == 2) {meta.setInstrument(MusicInstrument.SEEK);

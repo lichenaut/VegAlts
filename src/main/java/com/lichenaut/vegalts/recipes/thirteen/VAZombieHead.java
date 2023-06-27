@@ -14,6 +14,9 @@ public class VAZombieHead {
     public VAZombieHead(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
+        Material greenDye = Material.CACTUS_GREEN;
+        if (Material.getMaterial("GREEN_DYE") != null) greenDye = Material.getMaterial("GREEN_DYE");
+
         ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_zombie_head"), new ItemStack(Material.ZOMBIE_HEAD))
                 .shape(
                         "DFD",
@@ -21,7 +24,7 @@ public class VAZombieHead {
                         "DFD")
                 .setIngredient('S', Material.SKELETON_SKULL)
                 .setIngredient('F', Material.ROTTEN_FLESH)
-                .setIngredient('D', Material.GREEN_DYE);
+                .setIngredient('D', greenDye);
         Bukkit.addRecipe(recipe);
     }
 }

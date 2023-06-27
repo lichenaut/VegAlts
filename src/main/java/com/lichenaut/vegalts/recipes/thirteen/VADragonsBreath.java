@@ -14,7 +14,9 @@ public class VADragonsBreath {
     public VADragonsBreath(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapedRecipe recipe1 = new ShapedRecipe(new NamespacedKey(plugin, "veg_dragons_breath_1"), new ItemStack(Material.DRAGON_BREATH).add(2))
+        ItemStack dragonsBreath = new ItemStack(Material.DRAGON_BREATH, 3);
+
+        ShapedRecipe recipe1 = new ShapedRecipe(new NamespacedKey(plugin, "veg_dragons_breath_1"), dragonsBreath)
                 .shape(
                         "BBB",
                         "CEC",
@@ -23,7 +25,7 @@ public class VADragonsBreath {
                 .setIngredient('B', Material.GLASS_BOTTLE)
                 .setIngredient('C', Material.CHORUS_FRUIT);
         Bukkit.addRecipe(recipe1);
-        ShapedRecipe recipe2 = new ShapedRecipe(new NamespacedKey(plugin, "veg_dragons_breath_2"), new ItemStack(Material.DRAGON_BREATH).add(2))
+        ShapedRecipe recipe2 = new ShapedRecipe(new NamespacedKey(plugin, "veg_dragons_breath_2"), dragonsBreath)
                 .shape(
                         "CCC",
                         "CEC",

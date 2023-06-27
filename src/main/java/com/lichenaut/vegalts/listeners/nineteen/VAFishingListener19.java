@@ -65,13 +65,13 @@ public class VAFishingListener19 implements Listener {
         Entity caughtEntity = e.getCaught();
         if (caughtEntity != null && (p.hasPermission("vegalts.fishing") || plugin.getPluginConfig().getBoolean("global-vegan-fishing")) && !p.hasPermission("vegalts.fishing.disabled")) {
             Material caught = ((Item) caughtEntity).getItemStack().getType();
-            if (caught != Material.BAMBOO && caught != Material.COCOA_BEANS) {
+            if (caught != Material.getMaterial("BAMBOO") && caught != Material.COCOA_BEANS) {
                 Random rand = new Random();
                 if (VAFishingReference.getFish().contains(caught)) {
                     int n = rand.nextInt(27);
                     if (n <= 1) {caught = Material.KELP;
                     } else if (n <= 3) {caught = Material.LILY_PAD;
-                    } else if (n <= 5) {caught = Material.MOSS_CARPET;
+                    } else if (n <= 5) {caught = Material.getMaterial("MOSS_CARPET");
                     } else if (n <= 7) {caught = Material.VINE;
                     } else if (n <= 9) {caught = Material.WHEAT_SEEDS;
                     } else if (n <= 11) {caught = Material.MELON_SEEDS;
@@ -79,10 +79,10 @@ public class VAFishingListener19 implements Listener {
                     } else if (n <= 15) {caught = Material.BEETROOT_SEEDS;
                     } else if (n <= 17) {caught = Material.GRASS;
                     } else if (n <= 19) {caught = Material.SEAGRASS;
-                    } else if (n <= 21) {caught = Material.HANGING_ROOTS;
+                    } else if (n <= 21) {caught = Material.getMaterial("HANGING_ROOTS");
                     } else if (n <= 23) {caught = Material.SUGAR_CANE;
                     } else if (n == 24) {caught = Material.SEA_PICKLE;
-                    } else if (n == 25) {caught = Material.GLOW_LICHEN;
+                    } else if (n == 25) {caught = Material.getMaterial("GLOW_LICHEN");
                     } else {caught = getCoral();}
                 } else if (VAFishingReference.getJunk().contains(caught)) {
                     int n = rand.nextInt(19);
@@ -129,10 +129,11 @@ public class VAFishingListener19 implements Listener {
                         return;
                     } else if (n <= 11) {caught = Material.NAME_TAG;
                     } else if (n <= 14) {caught = Material.WET_SPONGE;
-                    } else if (n <= 17) {caught = Material.SPYGLASS;
+                    } else if (n <= 17) {caught = Material.getMaterial("SPYGLASS");
                     } else if (n <= 20) {caught = getDisc();
                     } else {caught = Material.TOTEM_OF_UNDYING;}
                 }
+                assert caught != null;
                 ((Item) caughtEntity).setItemStack(new ItemStack(caught));
             }
         }

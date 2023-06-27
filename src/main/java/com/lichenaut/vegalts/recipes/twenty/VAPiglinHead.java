@@ -14,7 +14,7 @@ public class VAPiglinHead {
     public VAPiglinHead(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_piglin_head"), new ItemStack(Material.PIGLIN_HEAD))
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_piglin_head"), new ItemStack(Material.getMaterial("PIGLIN_HEAD")))
                 .shape(
                         "PPP",
                         "PSP",

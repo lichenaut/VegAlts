@@ -18,7 +18,6 @@ public class VAEnderPearl {
     public void addRecipe() {
         ItemStack pearl = new ItemStack(Material.ENDER_PEARL);
         ItemMeta pearlMeta = pearl.getItemMeta();
-        pearlMeta.setCustomModelData(1);
         pearlMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         pearl.setItemMeta(pearlMeta);
 

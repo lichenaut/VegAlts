@@ -14,7 +14,7 @@ public class VASpecialCraftReference {
 
     public static HashSet<Material> getDehydraters() {
         HashSet<Material> dehydraters = new HashSet<>();
-        dehydraters.add(Material.HONEYCOMB);
+        dehydraters.add(Material.getMaterial("HONEYCOMB"));
         return dehydraters;
     }
 

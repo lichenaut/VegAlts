@@ -16,8 +16,8 @@ public class VAFroglightPearlescent {
     }
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_pearlescent_froglight"), new ItemStack(Material.PEARLESCENT_FROGLIGHT))
-                .addIngredient(1, Material.SHROOMLIGHT)
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_pearlescent_froglight"), new ItemStack(Material.getMaterial("PEARLESCENT_FROGLIGHT")))
+                .addIngredient(1, Material.getMaterial("SHROOMLIGHT"))
                 .addIngredient(1, Material.SLIME_BALL)
                 .addIngredient(1, Material.MAGMA_CREAM)
                 .addIngredient(1, Material.PURPLE_DYE);

@@ -14,7 +14,7 @@ public class VAPhantomMembrane {
     public VAPhantomMembrane(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_phantom_membrane"), new ItemStack(Material.PHANTOM_MEMBRANE).add())
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_phantom_membrane"), new ItemStack(Material.PHANTOM_MEMBRANE, 2))
                 .shape(
                         "PSP",
                         "SPS",

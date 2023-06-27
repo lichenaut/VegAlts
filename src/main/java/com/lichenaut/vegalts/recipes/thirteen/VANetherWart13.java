@@ -8,15 +8,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapelessRecipe;
 
-public class VANetherWart {
+public class VANetherWart13 {
 
     private final VegAlts plugin;
 
-    public VANetherWart(VegAlts plugin) {this.plugin = plugin;}
+    public VANetherWart13(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_nether_wart"), new ItemStack(Material.SLIME_BALL))
-                .addIngredient(new RecipeChoice.MaterialChoice(Material.BROWN_MUSHROOM, Material.RED_MUSHROOM, Material.CRIMSON_FUNGUS, Material.WARPED_FUNGUS))
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_nether_wart"), new ItemStack(Material.NETHER_WART))
+                .addIngredient(new RecipeChoice.MaterialChoice(Material.BROWN_MUSHROOM, Material.RED_MUSHROOM))
                 .addIngredient(Material.BLAZE_POWDER);
         Bukkit.addRecipe(recipe);
     }

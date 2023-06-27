@@ -14,9 +14,9 @@ public class VAHoneyBottle {
     public VAHoneyBottle(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_honey_bottle"), new ItemStack(Material.HONEY_BOTTLE))
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_honey_bottle"), new ItemStack(Material.getMaterial("HONEY_BOTTLE")))
                 .addIngredient(1, Material.GLASS_BOTTLE)
-                .addIngredient(1, Material.HONEYCOMB);
+                .addIngredient(1, Material.getMaterial("HONEYCOMB"));
         Bukkit.addRecipe(recipe);
     }
 }
