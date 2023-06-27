@@ -1,4 +1,4 @@
-package com.lichenaut.vegalts.recipes.thirteen;
+package com.lichenaut.vegalts.listeners.thirteen;
 
 import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Location;

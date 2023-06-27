@@ -1,6 +1,7 @@
-package com.lichenaut.vegalts.utility;
+package com.lichenaut.vegalts.listeners.thirteen;
 
 import com.lichenaut.vegalts.VegAlts;
+import com.lichenaut.vegalts.utility.VASpecialCraftReference;
 import org.bukkit.Material;
 import org.bukkit.MusicInstrument;
 import org.bukkit.entity.HumanEntity;

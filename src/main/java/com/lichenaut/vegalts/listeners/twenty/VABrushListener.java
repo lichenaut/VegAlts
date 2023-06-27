@@ -1,4 +1,4 @@
-package com.lichenaut.vegalts.recipes.twenty;
+package com.lichenaut.vegalts.listeners.twenty;
 
 import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Material;

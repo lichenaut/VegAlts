@@ -25,6 +25,7 @@ honey-bottle: true
 honeycomb: true
 ink-sac: true
 leather: true
+leather-smelting: true
 milk: true
 mutton: true
 nautilus-shell: true
@@ -75,3 +76,6 @@ global-infested-spawning-off: false
   #Individual permission: vegalts.playerhead
 global-unique-playerhead: false
   #Individual disable permission: vegalts.playerhead.disabled
+
+
+#Permission for '/va help': vegalts.help

@@ -1,6 +1,8 @@
 package com.lichenaut.vegalts.utility;
 
 import com.lichenaut.vegalts.VegAlts;
+import com.lichenaut.vegalts.listeners.nineteen.VAFishingListener19;
+import com.lichenaut.vegalts.listeners.thirteen.*;
 import com.lichenaut.vegalts.recipes.eighteen.VAGoatHorn18;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneyBottle;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneycomb;
@@ -9,11 +11,11 @@ import com.lichenaut.vegalts.recipes.seventeen.VABlazeRod17;
 import com.lichenaut.vegalts.recipes.seventeen.VAGlowInkSac;
 import com.lichenaut.vegalts.recipes.seventeen.VAGoatHorn17;
 import com.lichenaut.vegalts.recipes.seventeen.VAShulkerShell17;
-import com.lichenaut.vegalts.recipes.sixteen.VAFishingListener16;
+import com.lichenaut.vegalts.listeners.sixteen.VAFishingListener16;
 import com.lichenaut.vegalts.recipes.sixteen.VANetherStar16;
 import com.lichenaut.vegalts.recipes.thirteen.*;
-import com.lichenaut.vegalts.recipes.twenty.VABrushListener;
-import com.lichenaut.vegalts.recipes.twenty.VAFishingListener20;
+import com.lichenaut.vegalts.listeners.twenty.VABrushListener;
+import com.lichenaut.vegalts.listeners.twenty.VAFishingListener20;
 import com.lichenaut.vegalts.recipes.twenty.VAPiglinHead;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -90,6 +92,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("shulker-shell")) if (addedRecipies.add("vegShulkerShell")) new VAShulkerShell13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("skeleton-skull")) new VASkeletonSkull(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("slimeball")) new VASlimeball(plugin).addRecipe();
+                pMan.registerEvents(new VASpecialCraftListener(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("spider-eye")) new VASpiderEye(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("string")) new VAString(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("tropical-fish")) new VATropicalFish(plugin).addRecipe();

@@ -1,4 +1,4 @@
-package com.lichenaut.vegalts.recipes.sixteen;
+package com.lichenaut.vegalts.listeners.nineteen;
 
 import com.lichenaut.vegalts.VegAlts;
 import com.lichenaut.vegalts.utility.VAFishingReference;
@@ -18,11 +18,11 @@ import org.bukkit.potion.PotionType;
 
 import java.util.Random;
 
-public class VAFishingListener16 implements Listener {
+public class VAFishingListener19 implements Listener {
 
     private final VegAlts plugin;
 
-    public VAFishingListener16(VegAlts plugin) {this.plugin = plugin;}
+    public VAFishingListener19(VegAlts plugin) {this.plugin = plugin;}
 
     private Material getCoral() {
         Random rand = new Random();
@@ -68,18 +68,21 @@ public class VAFishingListener16 implements Listener {
             if (caught != Material.BAMBOO && caught != Material.COCOA_BEANS) {
                 Random rand = new Random();
                 if (VAFishingReference.getFish().contains(caught)) {
-                    int n = rand.nextInt(22);
+                    int n = rand.nextInt(27);
                     if (n <= 1) {caught = Material.KELP;
                     } else if (n <= 3) {caught = Material.LILY_PAD;
-                    } else if (n <= 5) {caught = Material.VINE;
-                    } else if (n <= 7) {caught = Material.WHEAT_SEEDS;
-                    } else if (n <= 9) {caught = Material.MELON_SEEDS;
-                    } else if (n <= 11) {caught = Material.PUMPKIN_SEEDS;
-                    } else if (n <= 13) {caught = Material.BEETROOT_SEEDS;
-                    } else if (n <= 15) {caught = Material.GRASS;
-                    } else if (n <= 17) {caught = Material.SEAGRASS;
-                    } else if (n <= 19) {caught = Material.SUGAR_CANE;
-                    } else if (n == 20) {caught = Material.SEA_PICKLE;
+                    } else if (n <= 5) {caught = Material.MOSS_CARPET;
+                    } else if (n <= 7) {caught = Material.VINE;
+                    } else if (n <= 9) {caught = Material.WHEAT_SEEDS;
+                    } else if (n <= 11) {caught = Material.MELON_SEEDS;
+                    } else if (n <= 13) {caught = Material.PUMPKIN_SEEDS;
+                    } else if (n <= 15) {caught = Material.BEETROOT_SEEDS;
+                    } else if (n <= 17) {caught = Material.GRASS;
+                    } else if (n <= 19) {caught = Material.SEAGRASS;
+                    } else if (n <= 21) {caught = Material.HANGING_ROOTS;
+                    } else if (n <= 23) {caught = Material.SUGAR_CANE;
+                    } else if (n == 24) {caught = Material.SEA_PICKLE;
+                    } else if (n == 25) {caught = Material.GLOW_LICHEN;
                     } else {caught = getCoral();}
                 } else if (VAFishingReference.getJunk().contains(caught)) {
                     int n = rand.nextInt(19);
@@ -114,7 +117,7 @@ public class VAFishingListener16 implements Listener {
                         return;
                     }
                 } else if (VAFishingReference.getTreasure().contains(caught)) {
-                    int n = rand.nextInt(19);
+                    int n = rand.nextInt(22);
                     if (n <= 2) {
                         ((Item) caughtEntity).setItemStack(new ItemStack(Material.EXPERIENCE_BOTTLE));
                         return;
@@ -126,7 +129,8 @@ public class VAFishingListener16 implements Listener {
                         return;
                     } else if (n <= 11) {caught = Material.NAME_TAG;
                     } else if (n <= 14) {caught = Material.WET_SPONGE;
-                    } else if (n <= 17) {caught = getDisc();
+                    } else if (n <= 17) {caught = Material.SPYGLASS;
+                    } else if (n <= 20) {caught = getDisc();
                     } else {caught = Material.TOTEM_OF_UNDYING;}
                 }
                 ((Item) caughtEntity).setItemStack(new ItemStack(caught));

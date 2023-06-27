@@ -22,11 +22,13 @@ public class VALeather {
                 .setIngredient('B', Material.GLASS_BOTTLE)
                 .setIngredient('S', Material.STRING);
         Bukkit.addRecipe(recipe);
-        FurnaceRecipe furnaceRecipe = new FurnaceRecipe(new NamespacedKey(plugin, "veg_leather_furnace"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 200);
-        Bukkit.addRecipe(furnaceRecipe);
-        SmokingRecipe smokingRecipe = new SmokingRecipe(new NamespacedKey(plugin, "veg_leather_smoker"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 100);
-        Bukkit.addRecipe(smokingRecipe);
-        CampfireRecipe campfireRecipe = new CampfireRecipe(new NamespacedKey(plugin, "veg_leather_campfire"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 600);
-        Bukkit.addRecipe(campfireRecipe);
+        if (plugin.getPluginConfig().getBoolean("leather-smelting")) {
+            FurnaceRecipe furnaceRecipe = new FurnaceRecipe(new NamespacedKey(plugin, "veg_leather_furnace"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 200);
+            Bukkit.addRecipe(furnaceRecipe);
+            SmokingRecipe smokingRecipe = new SmokingRecipe(new NamespacedKey(plugin, "veg_leather_smoker"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 100);
+            Bukkit.addRecipe(smokingRecipe);
+            CampfireRecipe campfireRecipe = new CampfireRecipe(new NamespacedKey(plugin, "veg_leather_campfire"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 600);
+            Bukkit.addRecipe(campfireRecipe);
+        }
     }
 }
