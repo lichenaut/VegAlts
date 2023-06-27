@@ -1,5 +1,5 @@
 # VegAlts
-VegAlts is a very configurable Spigot / (preferrably) Paper plugin that adds vegan paths for animal products, versions 1.13.2+!
+VegAlts adds vegan paths for animal products, very configurable and for versions 1.13.2+!
 
 Command | Permission | Description:
 
