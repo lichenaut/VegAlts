@@ -347,9 +347,9 @@ Individual item percentages are for the latest version. Individual item rates fo
         - Beetroot Seeds
         - Hanging Roots
         - Sugar Cane
+    3.45%:
         - Potato
         - Poisonous Potato
-    3.45%:
         - Sea Pickle
         - Random Dead Coral
 
