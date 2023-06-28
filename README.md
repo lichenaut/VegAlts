@@ -45,13 +45,13 @@ Note: Only available in 1.13.
 
 ![img_1.png](imgs/img_1.png)
 
-Description: 5 Brown Mushroom, 1 Wheat, and 2 of any seed type, in any order.
+Description: 5 Brown Mushroom, 1 Wheat, and 2 of any seed type combination, in any order.
 
 ### Raw Cod
 
 ![img_2.png](imgs/img_2.png)
 
-Description: 3 Brown Mushroom, 1 Wheat, 2 of any seed type, and 2 Kelp, in any order.
+Description: 3 Brown Mushroom, 1 Wheat, 2 of any seed type combination, and 2 Kelp, in any order.
 
 ### Creeper Head
 
@@ -157,7 +157,7 @@ Note: Also fills an empty bucket in inventory with water. If there is no empty b
 
 ![img.png](imgs/img_57.png)
 
-Description: 1 Water Bucket and 8 of any seed type.
+Description: 1 Water Bucket and 8 of any seed type combination.
 
 ### Raw Mutton
 
@@ -223,13 +223,13 @@ Description: 6 Brown Mushroom, 1 Beetroot, 1 Wheat, and 1 of any seed type, in a
 
 ![img_5.png](imgs/img_5.png)
 
-Description: 1 Brown Mushroom, 1 Wheat, 1 Spider Eye, 2 of any seed type, and 4 Kelp, in any order.
+Description: 1 Brown Mushroom, 1 Wheat, 1 Spider Eye, 2 of any seed type combination, and 4 Kelp, in any order.
 
 ### Rabbit
 
 ![img_6.png](imgs/img_6.png)
 
-Description: 4 Brown Mushroom, 1 Wheat, and 2 of any seed type, in any order.
+Description: 4 Brown Mushroom, 1 Wheat, and 2 of any seed type combination, in any order.
 
 ### Rabbit Hide
 
