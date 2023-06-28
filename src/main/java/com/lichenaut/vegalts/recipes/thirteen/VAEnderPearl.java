@@ -4,10 +4,10 @@ import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.tags.ItemTagType;
 
 public class VAEnderPearl {
 
@@ -18,7 +18,8 @@ public class VAEnderPearl {
     public void addRecipe() {
         ItemStack pearl = new ItemStack(Material.ENDER_PEARL);
         ItemMeta pearlMeta = pearl.getItemMeta();
-        pearlMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        NamespacedKey key = new NamespacedKey(plugin, "veg");
+        pearlMeta.getCustomTagContainer().setCustomTag(key, ItemTagType.STRING, "veg");
         pearl.setItemMeta(pearlMeta);
 
         ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_ender_pearl"), pearl)

@@ -22,7 +22,7 @@ public class VALeather13 {
                 .setIngredient('B', Material.GLASS_BOTTLE)
                 .setIngredient('S', Material.STRING);
         Bukkit.addRecipe(recipe);
-        if (plugin.getPluginConfig().getBoolean("leather-smelting")) {
+        if (plugin.getPluginConfig().getBoolean("rotten-flesh-to-leather-cooking")) {
             FurnaceRecipe furnaceRecipe = new FurnaceRecipe(new NamespacedKey(plugin, "veg_leather_furnace"), new ItemStack(Material.LEATHER), Material.ROTTEN_FLESH, 0, 200);
             Bukkit.addRecipe(furnaceRecipe);
         }

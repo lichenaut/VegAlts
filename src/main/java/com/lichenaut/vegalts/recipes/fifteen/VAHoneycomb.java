@@ -15,7 +15,7 @@ public class VAHoneycomb {
 
     public void addRecipe() {
         ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_honeycomb"), new ItemStack(Material.getMaterial("HONEYCOMB")))
-                .addIngredient(1, Material.POTION, -1)
+                .addIngredient(1, Material.POTION)
                 .addIngredient(1, Material.SUGAR)
                 .addIngredient(1, Material.PAPER)
                 .addIngredient(1, Material.ORANGE_DYE);

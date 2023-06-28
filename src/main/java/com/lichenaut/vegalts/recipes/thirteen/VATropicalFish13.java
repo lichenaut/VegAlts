@@ -8,18 +8,18 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapelessRecipe;
 
-public class VASalmon {
+public class VATropicalFish13 {
 
     private final VegAlts plugin;
 
-    public VASalmon(VegAlts plugin) {this.plugin = plugin;}
+    public VATropicalFish13(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_salmon"), new ItemStack(Material.SALMON))
-                .addIngredient(4, Material.RED_MUSHROOM)
+        ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_tropical_fish"), new ItemStack(Material.TROPICAL_FISH))
+                .addIngredient(1, Material.BROWN_MUSHROOM)
                 .addIngredient(2, Material.KELP)
-                .addIngredient(1, Material.BEETROOT)
                 .addIngredient(1, Material.WHEAT)
+                .addIngredient(1, Material.CARROT)
                 .addIngredient(new RecipeChoice.MaterialChoice(Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS, Material.BEETROOT_SEEDS));
         Bukkit.addRecipe(recipe);
     }

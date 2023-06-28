@@ -8,11 +8,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapelessRecipe;
 
-public class VAPorkchop {
+public class VAPorkchop13 {
 
     private final VegAlts plugin;
 
-    public VAPorkchop(VegAlts plugin) {this.plugin = plugin;}
+    public VAPorkchop13(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
         ShapelessRecipe recipe = new ShapelessRecipe(new NamespacedKey(plugin, "veg_porkchop"), new ItemStack(Material.PORKCHOP))

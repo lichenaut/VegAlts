@@ -25,7 +25,6 @@ honey-bottle: true
 honeycomb: true
 ink-sac: true
 leather: true
-leather-smelting: true
 milk: true
 mutton: true
 nautilus-shell: true
@@ -41,6 +40,7 @@ pufferfish: true
 rabbit: true
 rabbit-hide: true
 rabbits-foot: true
+rotten-flesh: true
 salmon: true
 scute: true
 shulker-shell: true
@@ -56,6 +56,9 @@ zombie-head: true
 ###############
 #Miscellaneous#
 ###############
+
+#Toggle whether players can place rotten flesh in furnaces, smokers, and campfires to cook it into leather.
+rotten-flesh-to-leather-cooking: true
 
 #Toggle whether vegan fishing applies to everyone.
   #Permission for individual vegan fishing: vegalts.fishing
@@ -76,6 +79,3 @@ global-infested-spawning-off: false
   #Individual permission: vegalts.playerhead
 global-unique-playerhead: false
   #Individual disable permission: vegalts.playerhead.disabled
-
-
-#Permission for '/va help': vegalts.help

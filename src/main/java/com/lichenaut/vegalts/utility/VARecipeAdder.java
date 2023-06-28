@@ -18,7 +18,7 @@ import com.lichenaut.vegalts.recipes.sixteen.VANetherWart16;
 import com.lichenaut.vegalts.recipes.thirteen.*;
 import com.lichenaut.vegalts.listeners.twenty.VABrushListener;
 import com.lichenaut.vegalts.listeners.twenty.VAFishingListener20;
-import com.lichenaut.vegalts.recipes.twenty.VAPiglinHead;
+import com.lichenaut.vegalts.recipes.twenty.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
@@ -35,9 +35,20 @@ public class VARecipeAdder {
         HashSet<String> addedRecipies = new HashSet<>();//tracks the most up-to-date recipes, depending on version
         for (int i = version; i > 0; i--) {
             if (i == 20) {
+                if (plugin.getPluginConfig().getBoolean("beef")) if (addedRecipies.add("vegBeef")) new VABeef20(plugin).addRecipe();
                 pMan.registerEvents(new VABrushListener(plugin), plugin);
+                if (plugin.getPluginConfig().getBoolean("chicken")) if (addedRecipies.add("vegChicken")) new VAChicken20(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("cod")) if (addedRecipies.add("vegCod")) new VACod20(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("egg")) if (addedRecipies.add("vegEgg")) new VAEgg20(plugin).addRecipe();
                 if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener20(plugin), plugin);
+                if (plugin.getPluginConfig().getBoolean("milk")) if (addedRecipies.add("vegMilk")) new VAMilk20(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("mutton")) if (addedRecipies.add("vegMutton")) new VAMutton20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("piglin-head")) new VAPiglinHead(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("porkchop")) if (addedRecipies.add("vegPorkchop")) new VAPorkchop20(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("pufferfish")) if (addedRecipies.add("vegPufferfish")) new VAPufferfish20(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("rabbit")) if (addedRecipies.add("vegRabbit")) new VARabbit20(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("salmon")) if (addedRecipies.add("vegSalmon")) new VASalmon20(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("tropical-fish")) if (addedRecipies.add("vegTropicalFish")) new VATropicalFish20(plugin).addRecipe();
             } else if (i == 19) {
                 if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener19(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("ochre-froglight")) new VAFroglightOchre(plugin).addRecipe();
@@ -61,18 +72,16 @@ public class VARecipeAdder {
             } else if (i == 14) {
                 if (plugin.getPluginConfig().getBoolean("leather")) if (addedRecipies.add("vegLeather")) new VALeather14(plugin).addRecipe();
             } else if (i == 13) {
-                if (plugin.getPluginConfig().getBoolean("beef")) new VABeef(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("beef")) if (addedRecipies.add("vegBeef")) new VABeef13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("blaze-rod")) if (addedRecipies.add("vegBlazeRod")) new VABlazeRod13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("bone")) new VABone(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("bone-meal")) if (version == 13) new VABoneMeal(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("chicken")) new VAChicken(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("cod")) new VACod(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("chicken")) if (addedRecipies.add("vegChicken")) new VAChicken13(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("cod")) if (addedRecipies.add("vegCod")) new VACod13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("creeper-head")) new VACreeperHead(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("dragons-breath")) new VADragonsBreath(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("egg")) new VAEgg(plugin).addRecipe();
-                pMan.registerEvents(new VAEggThrowListener(), plugin);
+                if (plugin.getPluginConfig().getBoolean("egg")) if (addedRecipies.add("vegEgg")) new VAEgg13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("ender-pearl")) new VAEnderPearl(plugin).addRecipe();
-                pMan.registerEvents(new VAEnderPearlListener(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("feather")) new VAFeather(plugin).addRecipe();
                 if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener13(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("ghast-tear")) new VAGhastTear(plugin).addRecipe();
@@ -80,19 +89,21 @@ public class VARecipeAdder {
                 pMan.registerEvents(new VAInfestedBlockListener(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("ink-sac")) new VAInkSac(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("leather")) if (addedRecipies.add("vegLeather")) new VALeather13(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("milk")) new VAMilk(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("mutton")) new VAMutton(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("milk")) if (addedRecipies.add("vegMilk")) new VAMilk13(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("mutton")) if (addedRecipies.add("vegMutton")) new VAMutton13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("nautilus-shell")) new VANautilusShell(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("nether-star")) if (addedRecipies.add("vegNetherStar")) new VANetherStar13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("nether-wart")) if (addedRecipies.add("vegNetherWart")) new VANetherWart13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("phantom-membrane")) new VAPhantomMembrane(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("player-head")) new VAPlayerHead(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("porkchop")) new VAPorkchop(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("pufferfish")) new VAPufferfish(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("rabbit")) new VARabbit(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("porkchop")) if (addedRecipies.add("vegPorkchop")) new VAPorkchop13(plugin).addRecipe();
+                pMan.registerEvents(new VAProjectileListener(plugin), plugin);
+                if (plugin.getPluginConfig().getBoolean("pufferfish")) if (addedRecipies.add("vegPufferfish")) new VAPufferfish13(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("rabbit")) if (addedRecipies.add("vegRabbit")) new VARabbit13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("rabbit-hide")) new VARabbitHide(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("rabbits-foot")) new VARabbitsFoot(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("salmon")) new VASalmon(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("rotten-flesh")) new VARottenFlesh(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("salmon")) if (addedRecipies.add("vegSalmon")) new VASalmon13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("scute")) new VAScute(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("shulker-shell")) if (addedRecipies.add("vegShulkerShell")) new VAShulkerShell13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("skeleton-skull")) new VASkeletonSkull(plugin).addRecipe();
@@ -100,7 +111,7 @@ public class VARecipeAdder {
                 pMan.registerEvents(new VASpecialCraftListener(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("spider-eye")) new VASpiderEye(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("string")) new VAString(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("tropical-fish")) new VATropicalFish(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("tropical-fish")) if (addedRecipies.add("vegTropicalFish")) new VATropicalFish13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("zombie-head")) new VAZombieHead(plugin).addRecipe();
                 break;
             }

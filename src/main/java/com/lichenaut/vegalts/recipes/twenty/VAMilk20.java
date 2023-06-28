@@ -1,4 +1,4 @@
-package com.lichenaut.vegalts.recipes.thirteen;
+package com.lichenaut.vegalts.recipes.twenty;
 
 import com.lichenaut.vegalts.VegAlts;
 import org.bukkit.Bukkit;
@@ -8,11 +8,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 
-public class VAMilk {
+public class VAMilk20 {
 
     private final VegAlts plugin;
 
-    public VAMilk(VegAlts plugin) {this.plugin = plugin;}
+    public VAMilk20(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
         ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(plugin, "veg_milk_bucket"), new ItemStack(Material.MILK_BUCKET))
@@ -20,7 +20,7 @@ public class VAMilk {
                         "SSS",
                         "SWS",
                         "SSS")
-                .setIngredient('S', new RecipeChoice.MaterialChoice(Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS, Material.BEETROOT_SEEDS))
+                .setIngredient('S', new RecipeChoice.MaterialChoice(Material.WHEAT_SEEDS, Material.MELON_SEEDS, Material.PUMPKIN_SEEDS, Material.BEETROOT_SEEDS, Material.getMaterial("TORCHFLOWER_SEEDS")))
                 .setIngredient('W', Material.WATER_BUCKET);
         Bukkit.addRecipe(recipe);
     }
