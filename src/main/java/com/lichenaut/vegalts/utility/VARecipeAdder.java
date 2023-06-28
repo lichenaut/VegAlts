@@ -27,8 +27,13 @@ import java.util.HashSet;
 public class VARecipeAdder {
 
     private final VegAlts plugin;
+    private int fishingTries = 0;//prevent infinite fishing result re-rolls
 
     public VARecipeAdder(VegAlts plugin) {this.plugin = plugin;}
+
+    public int getTries() {return fishingTries;}
+    public void addTries() {fishingTries++;}
+    public void resetTries() {fishingTries = 0;}
 
     public void addRecipes(int version) {
         PluginManager pMan = Bukkit.getPluginManager();
@@ -40,7 +45,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("chicken")) if (addedRecipies.add("vegChicken")) new VAChicken20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("cod")) if (addedRecipies.add("vegCod")) new VACod20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("egg")) if (addedRecipies.add("vegEgg")) new VAEgg20(plugin).addRecipe();
-                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener20(plugin), plugin);
+                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener20(plugin, this), plugin);
                 if (plugin.getPluginConfig().getBoolean("milk")) if (addedRecipies.add("vegMilk")) new VAMilk20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("mutton")) if (addedRecipies.add("vegMutton")) new VAMutton20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("piglin-head")) new VAPiglinHead(plugin).addRecipe();
@@ -50,7 +55,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("salmon")) if (addedRecipies.add("vegSalmon")) new VASalmon20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("tropical-fish")) if (addedRecipies.add("vegTropicalFish")) new VATropicalFish20(plugin).addRecipe();
             } else if (i == 19) {
-                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener19(plugin), plugin);
+                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener19(plugin, this), plugin);
                 if (plugin.getPluginConfig().getBoolean("ochre-froglight")) new VAFroglightOchre(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("pearlescent-froglight"))  new VAFroglightPearlescent(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("verdant-froglight")) new VAFroglightVerdant(plugin).addRecipe();
@@ -63,7 +68,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("goat-horn")) if (addedRecipies.add("vegGoatHorn")) new VAGoatHorn17(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("shulker-shell")) if (addedRecipies.add("vegShulkerShell")) new VAShulkerShell17(plugin).addRecipe();
             } else if (i == 16) {
-                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener16(plugin), plugin);
+                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener16(plugin, this), plugin);
                 if (plugin.getPluginConfig().getBoolean("nether-star")) if (addedRecipies.add("vegNetherStar")) new VANetherStar16(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("nether-wart")) if (addedRecipies.add("vegNetherWart")) new VANetherWart16(plugin).addRecipe();
             } else if (i == 15) {
@@ -83,7 +88,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("egg")) if (addedRecipies.add("vegEgg")) new VAEgg13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("ender-pearl")) new VAEnderPearl(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("feather")) new VAFeather(plugin).addRecipe();
-                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener13(plugin), plugin);
+                if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener13(plugin, this), plugin);
                 if (plugin.getPluginConfig().getBoolean("ghast-tear")) new VAGhastTear(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("gunpowder")) new VAGunpowder(plugin).addRecipe();
                 pMan.registerEvents(new VAInfestedBlockListener(plugin), plugin);

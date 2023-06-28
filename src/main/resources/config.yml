@@ -3,6 +3,38 @@ disable-plugin: false
 
 
 ###############
+#Miscellaneous#
+###############
+
+#Toggle whether players can place rotten flesh in furnaces, smokers, and campfires to cook it into leather.
+rotten-flesh-to-leather-cooking: true
+
+#Toggle whether vegan fishing applies to everyone.
+  #Permission for individual vegan fishing: vegalts.fishing
+global-vegan-fishing: false
+  #Permission to disable individual vegan fishing when the global setting is true: vegalts.fishing.disabled
+
+#Toggle whether vegan archaeology applies to everyone.
+  #Permission for individual vegan archaeology: vegalts.archaeology
+global-vegan-archaeology: false
+  #Permission to disable individual vegan archaeology when the global setting is true: vegalts.archaeology.disabled
+
+#Toggle whether mining infested blocks spawns silverfish.
+  #Individual permission: vegalts.infested
+global-infested-spawning-off: false
+  #Individual disable permission: vegalts.infested.disabled
+
+#Toggle whether player head crafting results in the default player head or the head of the player who crafted it.
+  #Individual permission: vegalts.playerhead
+global-unique-playerhead: false
+  #Individual disable permission: vegalts.playerhead.disabled
+
+#The more fishing results are disabled, the more the plugin works to get a valid result.
+  #Below is the number of times the plugin will try to get a valid result before making the result a stick.
+fishing-attempts: 10
+
+
+###############
 #Recipe Toggle#
 ###############
 
@@ -53,29 +85,44 @@ verdant-froglight: true
 zombie-head: true
 
 
-###############
-#Miscellaneous#
-###############
+#####################
+#Fishing Item Toggle#
+#####################
 
-#Toggle whether players can place rotten flesh in furnaces, smokers, and campfires to cook it into leather.
-rotten-flesh-to-leather-cooking: true
-
-#Toggle whether vegan fishing applies to everyone.
-  #Permission for individual vegan fishing: vegalts.fishing
-global-vegan-fishing: false
-  #Permission to disable individual vegan fishing when the global setting is true: vegalts.fishing.disabled
-
-#Toggle whether vegan archaeology applies to everyone.
-  #Permission for individual vegan archaeology: vegalts.archaeology
-global-vegan-archaeology: false
-  #Permission to disable individual vegan archaeology when the global setting is true: vegalts.archaeology.disabled
-
-#Toggle whether mining infested blocks spawns silverfish.
-  #Individual permission: vegalts.infested
-global-infested-spawning-off: false
-  #Individual disable permission: vegalts.infested.disabled
-
-#Toggle whether player head crafting results in the default player head or the head of the player who crafted it.
-  #Individual permission: vegalts.playerhead
-global-unique-playerhead: false
-  #Individual disable permission: vegalts.playerhead.disabled
+kelp: true
+lily-pad: true
+moss-carpet: true
+vine: true
+wheat-seeds: true
+melon-seeds: true
+pumpkin-seeds: true
+beetroot-seeds: true
+grass: true
+seagrass: true
+hanging-roots: true
+sugar-cane: true
+sea-pickle: true
+glow-lichen: true
+random-coral: true
+bowl: true
+stick: true
+arrow: true
+charcoal: true
+flint: true
+clay-ball: true
+compass: true
+brush: true
+flower-pot: true
+water-bucket: true
+prismarine-shard: true
+prismarine-crystals: true
+shears: true
+water-bottle: true
+bottle-o-enchanting: true
+iron-nugget: true
+gold-nugget: true
+name-tag: true
+wet-sponge: true
+spyglass: true
+random-disc: true
+totem-of-undying: true

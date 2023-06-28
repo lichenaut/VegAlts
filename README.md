@@ -155,7 +155,7 @@ Note: Also fills an empty bucket in inventory with water. If there is no empty b
 
 ### Milk Bucket
 
-![img.png](img.png)
+![img.png](imgs/img_57.png)
 
 Description: 1 Water Bucket and 8 of any seed type.
 
@@ -209,7 +209,7 @@ Description: 1 Skeleton Skull and 8 Raw Porkchop.
 
 ### Player Head
 
-![img_1.png](img_1.png)
+![img_1.png](imgs/img_58.png)
 
 Description: 1 Skeleton Skull and 8 Leather or Rabbit Hide.
 
@@ -247,9 +247,9 @@ Description: 1 Rabbit Hide and 1 Bone, in any order.
 
 ### Rotten Flesh
 
-![img_3.png](img_3.png)
+![img_3.png](imgs/img_60.png)
 
-![img_2.png](img_2.png)
+![img_2.png](imgs/img_59.png)
 
 Description: 1 Brown Mushroom or Red Mushroom, 1 Spider Eye, and 1 Bone Meal, in any order.
 
@@ -383,7 +383,7 @@ Individual item percentages are for the latest version. Individual item rates fo
     4.55%:
         - Totem of Undying
 
-Note: Bamboo and Cocoa Beans follow the same rules as vanilla fishing.
+Note: Bamboo and Cocoa Beans fishing rates have vanilla behavior.
 
 Global and per-player toggles information in `config.yml`.
 

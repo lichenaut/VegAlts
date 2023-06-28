@@ -2,11 +2,9 @@ package com.lichenaut.vegalts.listeners.thirteen;
 
 import com.lichenaut.vegalts.VegAlts;
 import com.lichenaut.vegalts.utility.VAFishingReference;
+import com.lichenaut.vegalts.utility.VARecipeAdder;
 import org.bukkit.Material;
-import org.bukkit.entity.Damageable;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
@@ -21,8 +19,9 @@ import java.util.Random;
 public class VAFishingListener13 implements Listener {
 
     private final VegAlts plugin;
+    private final VARecipeAdder adder;
 
-    public VAFishingListener13(VegAlts plugin) {this.plugin = plugin;}
+    public VAFishingListener13(VegAlts plugin, VARecipeAdder adder) {this.plugin = plugin;this.adder = adder;}
 
     private Material getCoral() {
         Random rand = new Random();
@@ -59,8 +58,20 @@ public class VAFishingListener13 implements Listener {
         } else {return Material.MUSIC_DISC_WARD;}
     }
 
+    private Material tryAgain(Player p, Entity e, FishHook h) {
+        Material newTry;
+        if (adder.getTries() < plugin.getConfig().getInt("fishing-attempts")) {
+            adder.addTries();
+            newTry = onFishing(new PlayerFishEvent(p, e, h, PlayerFishEvent.State.CAUGHT_FISH));
+        } else {
+            adder.resetTries();
+            newTry = Material.STICK;
+        }
+        return newTry;
+    }
+
     @EventHandler
-    public void onFishing(PlayerFishEvent e) {
+    public Material onFishing(PlayerFishEvent e) {
         Player p = e.getPlayer();
         Entity caughtEntity = e.getCaught();
         if (caughtEntity != null && (p.hasPermission("vegalts.fishing") || plugin.getPluginConfig().getBoolean("global-vegan-fishing")) && !p.hasPermission("vegalts.fishing.disabled")) {
@@ -69,68 +80,81 @@ public class VAFishingListener13 implements Listener {
                 Random rand = new Random();
                 if (VAFishingReference.getFish().contains(caught)) {
                     int n = rand.nextInt(22);
-                    if (n <= 1) {caught = Material.KELP;
-                    } else if (n <= 3) {caught = Material.LILY_PAD;
-                    } else if (n <= 5) {caught = Material.VINE;
-                    } else if (n <= 7) {caught = Material.WHEAT_SEEDS;
-                    } else if (n <= 9) {caught = Material.MELON_SEEDS;
-                    } else if (n <= 11) {caught = Material.PUMPKIN_SEEDS;
-                    } else if (n <= 13) {caught = Material.BEETROOT_SEEDS;
-                    } else if (n <= 15) {caught = Material.GRASS;
-                    } else if (n <= 17) {caught = Material.SEAGRASS;
-                    } else if (n <= 19) {caught = Material.SUGAR_CANE;
-                    } else if (n == 20) {caught = Material.SEA_PICKLE;
-                    } else {caught = getCoral();}
+                    if (n <= 1) {caught = (plugin.getConfig().getBoolean("kelp")) ? Material.KELP : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 3) {caught = (plugin.getConfig().getBoolean("lily-pad")) ? Material.LILY_PAD : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 5) {caught = (plugin.getConfig().getBoolean("vine")) ? Material.VINE : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 7) {caught = (plugin.getConfig().getBoolean("wheat-seeds")) ? Material.WHEAT_SEEDS : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 9) {caught = (plugin.getConfig().getBoolean("melon-seeds")) ? Material.MELON_SEEDS : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 11) {caught = (plugin.getConfig().getBoolean("pumpkin-seeds")) ? Material.PUMPKIN_SEEDS : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 13) {caught = (plugin.getConfig().getBoolean("beetroot-seeds")) ? Material.BEETROOT_SEEDS : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 15) {caught = (plugin.getConfig().getBoolean("grass")) ? Material.GRASS : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 17) {caught = (plugin.getConfig().getBoolean("seagrass")) ? Material.SEAGRASS : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 19) {caught = (plugin.getConfig().getBoolean("sugar-cane")) ? Material.SUGAR_CANE : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 20) {caught = (plugin.getConfig().getBoolean("sea-pickle")) ? Material.SEA_PICKLE : tryAgain(p, caughtEntity, e.getHook());
+                    } else caught = (plugin.getConfig().getBoolean("random-coral")) ? getCoral() : tryAgain(p, caughtEntity, e.getHook());
                 } else if (VAFishingReference.getJunk().contains(caught)) {
                     int n = rand.nextInt(19);
-                    if (n <= 1) {caught = Material.BOWL;
-                    } else if (n <= 3) {caught = Material.STICK;
-                    } else if (n <= 5) {caught = Material.ARROW;
-                    } else if (n <= 7) {caught = Material.CHARCOAL;
-                    } else if (n <= 9) {caught = Material.FLINT;
-                    } else if (n <= 11) {caught = Material.CLAY_BALL;
-                    } else if (n == 12) {caught = Material.COMPASS;
-                    } else if (n == 13) {caught = Material.FLOWER_POT;
-                    } else if (n == 14) {caught = Material.WATER_BUCKET;
-                    } else if (n == 15) {caught = Material.PRISMARINE_SHARD;
-                    } else if (n == 16) {caught = Material.PRISMARINE_CRYSTALS;
+                    if (n <= 1) {caught = (plugin.getConfig().getBoolean("bowl")) ? Material.BOWL : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 3) {caught = (plugin.getConfig().getBoolean("stick")) ? Material.STICK : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 5) {caught = (plugin.getConfig().getBoolean("arrow")) ? Material.ARROW : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 7) {caught = (plugin.getConfig().getBoolean("charcoal")) ? Material.CHARCOAL : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 9) {caught = (plugin.getConfig().getBoolean("flint")) ? Material.FLINT : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 11) {caught = (plugin.getConfig().getBoolean("clay-ball")) ? Material.CLAY_BALL : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 12) {caught = (plugin.getConfig().getBoolean("compass")) ? Material.COMPASS : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 13) {caught = (plugin.getConfig().getBoolean("flower-pot")) ? Material.FLOWER_POT : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 14) {caught = (plugin.getConfig().getBoolean("water-bucket")) ? Material.WATER_BUCKET : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 15) {caught = (plugin.getConfig().getBoolean("prismarine-shard")) ? Material.PRISMARINE_SHARD : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 16) {caught = (plugin.getConfig().getBoolean("prismarine-crystals")) ? Material.PRISMARINE_CRYSTALS : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n == 17) {
-                        ItemStack shears = new ItemStack(Material.SHEARS);
-                        Damageable shearsDamage = (Damageable) shears.getItemMeta();
-                        shearsDamage.damage(rand.nextInt(210)+18);
+                        if (plugin.getConfig().getBoolean("")) {
+                            ItemStack shears = new ItemStack(Material.SHEARS);
+                            Damageable shearsDamage = (Damageable) shears.getItemMeta();
+                            shearsDamage.damage(rand.nextInt(210)+18);
 
-                        shears.setItemMeta((ItemMeta) shearsDamage);
-                        ((Item) caughtEntity).setItemStack(shears);
-                        return;
+                            shears.setItemMeta((ItemMeta) shearsDamage);
+                            ((Item) caughtEntity).setItemStack(shears);
+                            return Material.SHEARS;
+                        } else caught = tryAgain(p, caughtEntity, e.getHook());
                     } else {
-                        ItemStack bottle = new ItemStack(Material.POTION);
-                        ItemMeta meta = bottle.getItemMeta();
-                        PotionMeta pmeta = (PotionMeta) meta;
-                        PotionData pdata = new PotionData(PotionType.WATER);
-                        pmeta.setBasePotionData(pdata);
-                        bottle.setItemMeta(meta);
+                        if (plugin.getConfig().getBoolean("water-bottle")) {
+                            ItemStack bottle = new ItemStack(Material.POTION);
+                            ItemMeta meta = bottle.getItemMeta();
+                            PotionMeta pmeta = (PotionMeta) meta;
+                            PotionData pdata = new PotionData(PotionType.WATER);
+                            pmeta.setBasePotionData(pdata);
+                            bottle.setItemMeta(meta);
 
-                        ((Item) caughtEntity).setItemStack(bottle);
-                        return;
+                            ((Item) caughtEntity).setItemStack(bottle);
+                            return Material.POTION;
+                        } else caught = tryAgain(p, caughtEntity, e.getHook());
                     }
                 } else if (VAFishingReference.getTreasure().contains(caught)) {
                     int n = rand.nextInt(19);
                     if (n <= 2) {
-                        ((Item) caughtEntity).setItemStack(new ItemStack(Material.EXPERIENCE_BOTTLE));
-                        return;
+                        if (plugin.getConfig().getBoolean("bottle-o-enchanting")) {
+                            ((Item) caughtEntity).setItemStack(new ItemStack(Material.EXPERIENCE_BOTTLE));
+                            return Material.EXPERIENCE_BOTTLE;
+                        } else caught = tryAgain(p, caughtEntity, e.getHook());
                     } else if (n <= 5) {
-                        ((Item) caughtEntity).setItemStack(new ItemStack(Material.IRON_NUGGET));
-                        return;
+                        if (plugin.getConfig().getBoolean("iron-nugget")) {
+                            ((Item) caughtEntity).setItemStack(new ItemStack(Material.IRON_NUGGET));
+                            return Material.IRON_NUGGET;
+                        } else caught = tryAgain(p, caughtEntity, e.getHook());
                     } else if (n <= 8) {
-                        ((Item) caughtEntity).setItemStack(new ItemStack(Material.GOLD_NUGGET));
-                        return;
-                    } else if (n <= 11) {caught = Material.NAME_TAG;
-                    } else if (n <= 14) {caught = Material.WET_SPONGE;
-                    } else if (n <= 17) {caught = getDisc();
-                    } else {caught = Material.TOTEM_OF_UNDYING;}
+                        if (plugin.getConfig().getBoolean("gold-nugget")) {
+                            ((Item) caughtEntity).setItemStack(new ItemStack(Material.GOLD_NUGGET));
+                            return Material.GOLD_NUGGET;
+                        } else caught = tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 11) {caught = (plugin.getConfig().getBoolean("name-tag")) ? Material.NAME_TAG : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 14) {caught = (plugin.getConfig().getBoolean("wet-sponge")) ? Material.WET_SPONGE : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n <= 17) {caught = (plugin.getConfig().getBoolean("random-disc")) ? getDisc() : tryAgain(p, caughtEntity, e.getHook());
+                    } else caught = (plugin.getConfig().getBoolean("totem-of-undying")) ? Material.TOTEM_OF_UNDYING : tryAgain(p, caughtEntity, e.getHook());
                 }
+                assert caught != null;
                 ((Item) caughtEntity).setItemStack(new ItemStack(caught));
+                return caught;
             }
         }
+        if (caughtEntity != null) return ((Item) caughtEntity).getItemStack().getType(); else return null;
     }
 }
