@@ -18,13 +18,13 @@ public class VAUpdateChecker {
     public VAUpdateChecker(JavaPlugin plugin, VegAlts dlPlugin) {this.plugin = plugin;this.vaPlugin = dlPlugin;}
 
     public void getVersion(final Consumer<String> consumer) {
-        /*Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-            try (InputStream inputStream = new URL("https://api.spigotmc.org/legacy/update.php?resource=" + ??????).openStream(); Scanner scanner = new
+        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+            try (InputStream inputStream = new URL("https://api.spigotmc.org/legacy/update.php?resource=" + 110827).openStream(); Scanner scanner = new
                     Scanner(inputStream)) {if (scanner.hasNext()) {consumer.accept(scanner.next());}
             } catch (IOException e) {
                 vaPlugin.getLog().warning("Unable to check for updates!");
                 e.printStackTrace();
             }
-        });*/
+        });
     }
 }
