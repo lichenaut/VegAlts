@@ -87,6 +87,24 @@ Note: Fake Ender Pearls do not spawn Endermites.
 
 Description: 1 Paper and 1 Stick, in any order.
 
+### Ochre Froglight
+
+![img_40.png](imgs/img_40.png)
+
+Description: 1 Shroomlight, 1 Slimeball, 1 Magma Cream, and 1 Yellow Dye, in any order.
+
+### Pearlescent Froglight
+
+![img_41.png](imgs/img_41.png)
+
+Description: 1 Shroomlight, 1 Slimeball, 1 Magma Cream, and 1 Purple Dye, in any order.
+
+### Verdant Froglight
+
+![img_42.png](imgs/img_42.png)
+
+Description: 1 Shroomlight, 1 Slimeball, 1 Magma Cream, and 1 Green Dye, in any order.
+
 ### Ghast Tear
 
 ![img_20.png](imgs/img_20.png)
@@ -182,18 +200,6 @@ Description: 1 Conduit, 4 End Crystal, and 4 Soul Sand or Soul Soil.
 ![img_39.png](imgs/img_39.png)
 
 Description: 1 of Red Mushroom, Brown Mushroom, Crimson Fungus, or Warped Fungus and 1 Blaze Powder, in any order.
-
-### Ochre Froglight
-
-![img_40.png](imgs/img_40.png)
-
-Description: 1 Shroomlight, 1 Slimeball, 1 Magma Cream, and 1 Yellow Dye, in any order.
-
-### Pearlescent Froglight
-
-![img_41.png](imgs/img_41.png)
-
-Description: 1 Shroomlight, 1 Slimeball, 1 Magma Cream, and 1 Purple Dye, in any order.
 
 ### Phantom Membrane (2)
 
@@ -315,12 +321,6 @@ Description: 2-4 of Grass, Tall Grass, or Seagrass, in any order.
 
 Description: 1 Brown Mushroom, 1 Wheat, 1 Carrot, 1 of any seed type, and 2 Kelp, in any order.
 
-### Verdant Froglight
-
-![img_42.png](imgs/img_42.png)
-
-Description: 1 Shroomlight, 1 Slimeball, 1 Magma Cream, and 1 Green Dye, in any order.
-
 ### Zombie Head
 
 ![img_56.png](imgs/img_56.png)
@@ -334,7 +334,7 @@ Similar to vanilla fishing, each successful fish has an 85% chance for flora, 10
 Individual item percentages are for the latest version. Individual item rates for older versions increase as items are removed.
 
 ### Flora
-    7.41%:
+    6.9%:
         - Kelp
         - Seagrass
         - Grass
@@ -347,7 +347,9 @@ Individual item percentages are for the latest version. Individual item rates fo
         - Beetroot Seeds
         - Hanging Roots
         - Sugar Cane
-    3.71%:
+        - Potato
+        - Poisonous Potato
+    3.45%:
         - Sea Pickle
         - Random Dead Coral
 

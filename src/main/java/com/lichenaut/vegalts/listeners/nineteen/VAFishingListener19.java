@@ -79,7 +79,7 @@ public class VAFishingListener19 implements Listener {
             if (caught != Material.getMaterial("BAMBOO") && caught != Material.COCOA_BEANS) {
                 Random rand = new Random();
                 if (VAFishingReference.getFish().contains(caught)) {
-                    int n = rand.nextInt(27);
+                    int n = rand.nextInt(29);
                     if (n <= 1) {caught = (plugin.getConfig().getBoolean("kelp")) ? Material.KELP : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n <= 3) {caught = (plugin.getConfig().getBoolean("lily-pad")) ? Material.LILY_PAD : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n <= 5) {caught = (plugin.getConfig().getBoolean("moss-carpet")) ? Material.getMaterial("MOSS_CARPET") : tryAgain(p, caughtEntity, e.getHook());
@@ -94,6 +94,8 @@ public class VAFishingListener19 implements Listener {
                     } else if (n <= 23) {caught = (plugin.getConfig().getBoolean("sugar-cane")) ? Material.SUGAR_CANE : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n == 24) {caught = (plugin.getConfig().getBoolean("sea-pickle")) ? Material.SEA_PICKLE : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n == 25) {caught = (plugin.getConfig().getBoolean("glow-lichen")) ? Material.getMaterial("GLOW_LICHEN") : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 26) {caught = (plugin.getConfig().getBoolean("potato")) ? Material.POTATO : tryAgain(p, caughtEntity, e.getHook());
+                    } else if (n == 27) {caught = (plugin.getConfig().getBoolean("poisonous-potato")) ? Material.POISONOUS_POTATO : tryAgain(p, caughtEntity, e.getHook());
                     } else caught = (plugin.getConfig().getBoolean("random-coral")) ? getCoral() : tryAgain(p, caughtEntity, e.getHook());
                 } else if (VAFishingReference.getJunk().contains(caught)) {
                     int n = rand.nextInt(19);
