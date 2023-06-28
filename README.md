@@ -5,7 +5,7 @@ VegAlts adds vegan paths for animal products, versions 1.13.2+.
 
 Command | Permission | Description:
 
-    - /va help | vegalts.help | Links to crafting guide.
+    - /va help | vegalts.help | Links to guide.
 
 ## Crafting Guide
 
