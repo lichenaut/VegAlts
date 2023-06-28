@@ -336,8 +336,8 @@ Individual item percentages are for the latest version. Individual item rates fo
 ### Flora
     6.9%:
         - Kelp
-        - Seagrass
         - Grass
+        - Seagrass
         - Lily Pad
         - Moss Carpet
         - Vine
@@ -350,6 +350,7 @@ Individual item percentages are for the latest version. Individual item rates fo
     3.45%:
         - Potato
         - Poisonous Potato
+        - Glow Lichen
         - Sea Pickle
         - Random Dead Coral
 
@@ -358,6 +359,7 @@ Individual item percentages are for the latest version. Individual item rates fo
     10%:
         - Bowl
         - Stick
+        - Arrow
         - Charcoal
         - Flint
         - Clay Ball
