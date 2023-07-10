@@ -1,4 +1,4 @@
-package com.lichenaut.vegalts.listeners.thirteen;
+package com.lichenaut.vegalts.listeners.twenty;
 
 import com.lichenaut.vegalts.VegAlts;
 import com.lichenaut.vegalts.utility.VASpecialCraftReference;
@@ -20,11 +20,11 @@ import org.bukkit.potion.PotionType;
 import java.util.Objects;
 import java.util.Random;
 
-public class VASpecialCraftListener implements Listener {
+public class VASpecialCraftListener20 implements Listener {
 
     private final VegAlts plugin;
 
-    public VASpecialCraftListener(VegAlts plugin) {this.plugin = plugin;}
+    public VASpecialCraftListener20(VegAlts plugin) {this.plugin = plugin;}
 
     private int invSpace(Player p) {//count open inventory slots
         ItemStack[] inventory = p.getInventory().getContents();

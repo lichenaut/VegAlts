@@ -4,6 +4,7 @@ import com.lichenaut.vegalts.VegAlts;
 import com.lichenaut.vegalts.listeners.nineteen.VAFishingListener19;
 import com.lichenaut.vegalts.listeners.sixteen.VAProjectileListener16;
 import com.lichenaut.vegalts.listeners.thirteen.*;
+import com.lichenaut.vegalts.listeners.twenty.VASpecialCraftListener20;
 import com.lichenaut.vegalts.recipes.eighteen.VAGoatHorn18;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneyBottle;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneycomb;
@@ -54,6 +55,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("pufferfish")) if (addedRecipies.add("vegPufferfish")) new VAPufferfish20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("rabbit")) if (addedRecipies.add("vegRabbit")) new VARabbit20(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("salmon")) if (addedRecipies.add("vegSalmon")) new VASalmon20(plugin).addRecipe();
+                if (addedRecipies.add("vegHorn")) pMan.registerEvents(new VASpecialCraftListener20(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("tropical-fish")) if (addedRecipies.add("vegTropicalFish")) new VATropicalFish20(plugin).addRecipe();
             } else if (i == 19) {
                 if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener19(plugin, this), plugin);
@@ -115,7 +117,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("shulker-shell")) if (addedRecipies.add("vegShulkerShell")) new VAShulkerShell13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("skeleton-skull")) new VASkeletonSkull(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("slimeball")) new VASlimeball(plugin).addRecipe();
-                pMan.registerEvents(new VASpecialCraftListener(plugin), plugin);
+                if (addedRecipies.add("vegHorn")) pMan.registerEvents(new VASpecialCraftListener13(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("spider-eye")) new VASpiderEye(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("string")) new VAString(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("tropical-fish")) if (addedRecipies.add("vegTropicalFish")) new VATropicalFish13(plugin).addRecipe();

@@ -121,6 +121,8 @@ Description: 1 Ink Sac and 1 Glowstone Dust, in any order.
 
 ### Goat Horn
 
+Note: Goat Horn crafting type randomization is only available on versions 1.20+.
+
 #### 1.19+:
 
 ![img_23.png](imgs/img_23.png)

@@ -14,7 +14,7 @@ public class VAZombieHead {
     public VAZombieHead(VegAlts plugin) {this.plugin = plugin;}
 
     public void addRecipe() {
-        Material greenDye = Material.CACTUS_GREEN;
+        Material greenDye = Material.getMaterial("CACTUS_GREEN");
         if (Material.getMaterial("GREEN_DYE") != null) greenDye = Material.getMaterial("GREEN_DYE");
 
         assert greenDye != null;
