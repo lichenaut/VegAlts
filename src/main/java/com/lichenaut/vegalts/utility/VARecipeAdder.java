@@ -2,6 +2,7 @@ package com.lichenaut.vegalts.utility;
 
 import com.lichenaut.vegalts.VegAlts;
 import com.lichenaut.vegalts.listeners.nineteen.VAFishingListener19;
+import com.lichenaut.vegalts.listeners.sixteen.VAProjectileListener16;
 import com.lichenaut.vegalts.listeners.thirteen.*;
 import com.lichenaut.vegalts.recipes.eighteen.VAGoatHorn18;
 import com.lichenaut.vegalts.recipes.fifteen.VAHoneyBottle;
@@ -71,6 +72,7 @@ public class VARecipeAdder {
                 if (addedRecipies.add("vegFishing")) pMan.registerEvents(new VAFishingListener16(plugin, this), plugin);
                 if (plugin.getPluginConfig().getBoolean("nether-star")) if (addedRecipies.add("vegNetherStar")) new VANetherStar16(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("nether-wart")) if (addedRecipies.add("vegNetherWart")) new VANetherWart16(plugin).addRecipe();
+                pMan.registerEvents(new VAProjectileListener16(), plugin);
             } else if (i == 15) {
                 if (plugin.getPluginConfig().getBoolean("honey-bottle")) new VAHoneyBottle(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("honeycomb")) new VAHoneycomb(plugin).addRecipe();
@@ -102,7 +104,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("phantom-membrane")) new VAPhantomMembrane(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("player-head")) new VAPlayerHead(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("porkchop")) if (addedRecipies.add("vegPorkchop")) new VAPorkchop13(plugin).addRecipe();
-                pMan.registerEvents(new VAProjectileListener(plugin), plugin);
+                pMan.registerEvents(new VAProjectileListener13(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("pufferfish")) if (addedRecipies.add("vegPufferfish")) new VAPufferfish13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("rabbit")) if (addedRecipies.add("vegRabbit")) new VARabbit13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("rabbit-hide")) new VARabbitHide(plugin).addRecipe();

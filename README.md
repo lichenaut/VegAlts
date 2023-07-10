@@ -71,7 +71,7 @@ Description: 3 Glass Bottle, 1 End Crystal, and 5 Chorus Fruit, either in the or
 
 Description: 1 Water Bottle, 1 Wheat, and 1 of any seed type, in any order.
 
-Note: Fake Eggs do not hatch.
+Note: Fake Eggs do not hatch, versions 1.16.1+.
 
 ### Ender Pearl
 
@@ -168,6 +168,7 @@ Description: 1 Charcoal and 4 Kelp.
 ![img_36.png](imgs/img_36.png)
 
 Description: 1 Glass Bottle, 3 Apple, and 5 String.
+Alternate: Cook Rotten Flesh (toggleable in config).
 
 Note: Also fills an empty bucket in inventory with water. If there is no empty bucket, returns as many Water Bottles as Leather crafted.
 

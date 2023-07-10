@@ -8,18 +8,17 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
-import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.tags.ItemTagType;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.projectiles.BlockProjectileSource;
 
-public class VAProjectileListener implements Listener {
+public class VAProjectileListener13 implements Listener {
 
     private final VegAlts plugin;
 
-    public VAProjectileListener(VegAlts plugin) {this.plugin = plugin;}
+    public VAProjectileListener13(VegAlts plugin) {this.plugin = plugin;}
 
     @EventHandler
     public void onProjectileThrow(ProjectileLaunchEvent e) {//key match -> is fake -> set entity meta
@@ -34,12 +33,6 @@ public class VAProjectileListener implements Listener {
                 else if (offHand != null) if (offHand.getCustomTagContainer().hasCustomTag(key, ItemTagType.STRING)) projectile.setMetadata("veg", new FixedMetadataValue(plugin, true));
             } else if (projectile.getShooter() instanceof BlockProjectileSource) ((BlockProjectileSource) projectile.getShooter()).getBlock().getDrops().forEach(item -> {if (item.getItemMeta().getCustomTagContainer().hasCustomTag(key, ItemTagType.STRING)) projectile.setMetadata("veg", new FixedMetadataValue(plugin, true));});
         }
-    }
-
-    @EventHandler
-    public void onPlayerEggThrow(PlayerEggThrowEvent e) {//fake eggs do not hatch
-        ThrowableProjectile egg = (ThrowableProjectile) e.getEgg();
-        if (egg.hasMetadata("veg")) e.setHatching(false);
     }
 
     @EventHandler
