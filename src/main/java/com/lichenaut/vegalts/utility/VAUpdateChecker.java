@@ -15,7 +15,7 @@ public class VAUpdateChecker {
     private final JavaPlugin plugin;
     private final VegAlts vaPlugin;
 
-    public VAUpdateChecker(JavaPlugin plugin, VegAlts dlPlugin) {this.plugin = plugin;this.vaPlugin = dlPlugin;}
+    public VAUpdateChecker(JavaPlugin plugin, VegAlts vaPlugin) {this.plugin = plugin;this.vaPlugin = vaPlugin;}
 
     public void getVersion(final Consumer<String> consumer) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
