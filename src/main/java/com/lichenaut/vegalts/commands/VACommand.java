@@ -23,16 +23,17 @@ public class VACommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@Nonnull CommandSender sender, @Nonnull Command command, @Nonnull String label, @Nonnull String[] args) {
-        String helpMessage = "Crafting recipe guide: " + ChatColor.YELLOW + "https://github.com/lichenaut/VegAlts/blob/master/README.md";
-        String invalidMessage = ChatColor.RED + "Invalid usage of '/va'. Use '" + ChatColor.GRAY + "/va help" + ChatColor.RED + ".";
-        StringBuilder arguments = new StringBuilder("va");
-        for (String arg : args) {arguments.append(" ").append(arg);}
-        String fakeUnknown = ChatColor.RED + "Unknown or incomplete command, see below for error\n" + ChatColor.RED + ChatColor.UNDERLINE + arguments + ChatColor.RESET + ChatColor.RED + ChatColor.ITALIC + "<--[HERE]";
+        String helpMessage = ChatColor.GRAY + "Crafting recipes and vegan mechanics can be found here: " + ChatColor.GREEN +
+                "https://github.com/lichenaut/VegAlts/blob/master/README.md";
+        String invalidMessage = ChatColor.RED + "Invalid usage of '" + ChatColor.WHITE + "/va" + ChatColor.RED + "'. Use '" + ChatColor.WHITE + "/va help" + ChatColor.RED + "'.";
+        //StringBuilder arguments = new StringBuilder("va");
+        //for (String arg : args) {arguments.append(" ").append(arg);}
+        //String fakeUnknown = ChatColor.RED + "Unknown or incomplete command, see below for error\n" + ChatColor.RED + ChatColor.UNDERLINE + arguments + ChatColor.RESET + ChatColor.RED + ChatColor.ITALIC + "<--[HERE]";
 
-        if (sender instanceof Player && !sender.hasPermission("vegalts.help")) messageSender(sender, fakeUnknown);
-        if (args.length == 0) messageSender(sender, invalidMessage);
-        if (args[0].equals("help")) messageSender(sender, helpMessage);
-        else messageSender(sender, invalidMessage);
-        return false;
+        if (args.length == 0 || args[0].equals("help")) {
+            messageSender(sender, helpMessage);
+            return true;
+        } else messageSender(sender, invalidMessage);
+        return true;
     }
 }

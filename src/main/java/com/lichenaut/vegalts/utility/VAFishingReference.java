@@ -6,17 +6,19 @@ import java.util.HashSet;
 
 public class VAFishingReference {
 
-    public static HashSet<Material> getFish() {
-        HashSet<Material> fishCategory = new HashSet<>();
+    private final HashSet<Material> fishCategory;
+    private final HashSet<Material> junkCategory;
+    private final HashSet<Material> treasureCategory;
+
+    public VAFishingReference() {
+        fishCategory = new HashSet<>();
+        junkCategory = new HashSet<>();
+        treasureCategory = new HashSet<>();
+
         fishCategory.add(Material.COD);
         fishCategory.add(Material.SALMON);
         fishCategory.add(Material.TROPICAL_FISH);
         fishCategory.add(Material.PUFFERFISH);
-        return fishCategory;
-    }
-
-    public static HashSet<Material> getJunk() {//bamboo and cocoa beans are unchanged
-        HashSet<Material> junkCategory = new HashSet<>();
         junkCategory.add(Material.LILY_PAD);
         junkCategory.add(Material.BOWL);
         junkCategory.add(Material.FISHING_ROD);
@@ -29,16 +31,16 @@ public class VAFishingReference {
         junkCategory.add(Material.BONE);
         junkCategory.add(Material.INK_SAC);
         junkCategory.add(Material.TRIPWIRE_HOOK);
-        return junkCategory;
-    }
-
-    public static HashSet<Material> getTreasure() {//all fishing rods are treated as junk
-        HashSet<Material> treasureCategory = new HashSet<>();
         treasureCategory.add(Material.BOW);
         treasureCategory.add(Material.ENCHANTED_BOOK);
         treasureCategory.add(Material.NAME_TAG);
         treasureCategory.add(Material.NAUTILUS_SHELL);
         treasureCategory.add(Material.SADDLE);
-        return treasureCategory;
     }
+
+    public HashSet<Material> getFish() {return fishCategory;}
+
+    public HashSet<Material> getJunk() {return junkCategory;}
+
+    public HashSet<Material> getTreasure() {return treasureCategory;}
 }

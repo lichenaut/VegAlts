@@ -20,8 +20,9 @@ public class VAFishingListener16 implements Listener {
 
     private final VegAlts plugin;
     private final VARecipeAdder adder;
+    private final VAFishingReference ref;
 
-    public VAFishingListener16(VegAlts plugin, VARecipeAdder adder) {this.plugin = plugin;this.adder = adder;}
+    public VAFishingListener16(VegAlts plugin, VARecipeAdder adder, VAFishingReference ref) {this.plugin = plugin;this.adder = adder;this.ref = ref;}
 
     private Material getCoral() {
         Random rand = new Random();
@@ -78,7 +79,7 @@ public class VAFishingListener16 implements Listener {
             Material caught = ((Item) caughtEntity).getItemStack().getType();
             if (caught != Material.getMaterial("BAMBOO") && caught != Material.COCOA_BEANS) {
                 Random rand = new Random();
-                if (VAFishingReference.getFish().contains(caught)) {
+                if (ref.getFish().contains(caught)) {
                     int n = rand.nextInt(24);
                     if (n <= 1) {caught = (plugin.getConfig().getBoolean("kelp")) ? Material.KELP : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n <= 3) {caught = (plugin.getConfig().getBoolean("lily-pad")) ? Material.LILY_PAD : tryAgain(p, caughtEntity, e.getHook());
@@ -94,7 +95,7 @@ public class VAFishingListener16 implements Listener {
                     } else if (n == 21) {caught = (plugin.getConfig().getBoolean("potato")) ? Material.POTATO : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n == 22) {caught = (plugin.getConfig().getBoolean("poisonous-potato")) ? Material.POISONOUS_POTATO : tryAgain(p, caughtEntity, e.getHook());
                     } else caught = (plugin.getConfig().getBoolean("random-coral")) ? getCoral() : tryAgain(p, caughtEntity, e.getHook());
-                } else if (VAFishingReference.getJunk().contains(caught)) {
+                } else if (ref.getJunk().contains(caught)) {
                     int n = rand.nextInt(19);
                     if (n <= 1) {caught = (plugin.getConfig().getBoolean("bowl")) ? Material.BOWL : tryAgain(p, caughtEntity, e.getHook());
                     } else if (n <= 3) {caught = (plugin.getConfig().getBoolean("stick")) ? Material.STICK : tryAgain(p, caughtEntity, e.getHook());
@@ -130,7 +131,7 @@ public class VAFishingListener16 implements Listener {
                             return Material.POTION;
                         } else caught = tryAgain(p, caughtEntity, e.getHook());
                     }
-                } else if (VAFishingReference.getTreasure().contains(caught)) {
+                } else if (ref.getTreasure().contains(caught)) {
                     int n = rand.nextInt(19);
                     if (n <= 2) {
                         if (plugin.getConfig().getBoolean("bottle-o-enchanting")) {

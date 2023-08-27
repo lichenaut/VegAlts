@@ -26,12 +26,8 @@ global-infested-spawning-off: false
 
 #Toggle whether player head crafting results in the default player head or the head of the player who crafted it.
   #Individual permission: vegalts.playerhead
-global-unique-playerhead: false
+global-unique-playerhead: true
   #Individual disable permission: vegalts.playerhead.disabled
-
-#The more fishing results are disabled, the more the plugin works to get a valid result.
-  #Below is the number of times the plugin will try to get a valid result before making the result a stick.
-fishing-attempts: 10
 
 
 ###############
@@ -107,7 +103,6 @@ potato: true
 poisonous-potato: true
 random-coral: true
 bowl: true
-stick: true
 arrow: true
 charcoal: true
 flint: true
