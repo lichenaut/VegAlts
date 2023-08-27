@@ -14,7 +14,6 @@ import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Random;
 
 public class VAFishingListener20 implements Listener {
@@ -201,7 +200,7 @@ public class VAFishingListener20 implements Listener {
             int n = rand.nextInt(randCaughtJunk.size());
             switch (randCaughtJunk.get(n)) {
                 case BRUSH:
-                    ItemStack brush = new ItemStack(Objects.requireNonNull(Material.getMaterial("BRUSH")));
+                    ItemStack brush = new ItemStack(Material.BRUSH);
                     Damageable brushDamage = (Damageable) brush.getItemMeta();
                     brushDamage.damage(rand.nextInt(40)+14);
                     brush.setItemMeta((ItemMeta) brushDamage);
@@ -223,6 +222,8 @@ public class VAFishingListener20 implements Listener {
                     bottle.setItemMeta(meta);
                     ((Item) caughtEntity).setItemStack(bottle);
                     return;
+                default:
+                    caught = randCaughtJunk.get(n);
             }
         } else if (ref.getTreasure().contains(caught)) {
             if (plugin.getConfig().getBoolean("random-disc")) {
