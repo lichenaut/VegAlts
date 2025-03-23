@@ -34,10 +34,12 @@ global-unique-playerhead: true
 #Recipe Toggle#
 ###############
 
+armadillo-scute: true
 beef: true
 blaze-rod: true
 bone: true
 bone-meal: true
+breeze-rod: true
 chicken: true
 cod: true
 creeper-head: true
@@ -70,7 +72,7 @@ rabbit-hide: true
 rabbits-foot: true
 rotten-flesh: true
 salmon: true
-scute: true
+turtle-scute: true
 shulker-shell: true
 skeleton-skull: true
 slimeball: true

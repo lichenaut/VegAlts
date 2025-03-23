@@ -6,7 +6,7 @@
 
     <groupId>com.lichenaut</groupId>
     <artifactId>VegAlts</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>VegAlts</name>
@@ -48,7 +48,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <outputFile>/home/lichenaut/Desktop/papertesting/plugins/VegAlts.jar</outputFile>
+                            <outputFile>/home/lichenaut/Desktop/VegAlts.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>

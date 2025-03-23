@@ -9,6 +9,12 @@ Command | Permission | Description:
 
 ## Crafting Guide
 
+### Armadillo Scute (2)
+
+![img_61.png](imgs/img_61.png)
+
+Description: 5 Brick and 4 Bone, in the order pictured or upside-down.
+
 ### Raw Beef
 
 ![img.png](imgs/img.png)
@@ -39,7 +45,13 @@ Description: 3 Bone Meal in a line in any direction.
 
 Description: 9 Apple, Beetroot, Carrot, Cocoa Beans, Fern, Large Fern, Dandelion, Poppy, Blue Orchid, Allium, Azure Bluet, Red Tulip, Orange Tulip, White Tulip, Pink Tulip, Oxeye Daisy, Brown Mushroom, Red Mushroom, Lily Pad, Melon, Mushroom Stew, Nether Wart, Potato, Pumpkin, Carved Pumpkin, Sea Pickle, Wheat, Baked Potato, Bread, Cookie, Hay Block, Red Mushroom Block, or Brown Mushroom Block, in any order. 
 
-Note: Only available in 1.13.
+Note: Only available in 1.13.2+.
+
+### Breeze Rod
+
+![img_62.png](imgs/img_62.png)
+
+Description: 1 Blaze Rod and 8 Amethyst Cluster.
 
 ### Raw Chicken
 
@@ -268,7 +280,7 @@ Description: 1 Brown Mushroom or Red Mushroom, 1 Spider Eye, and 1 Bone Meal, in
 
 Description: 4 Red Mushroom, 1 Beetroot, 1 Wheat, 1 of any seed type, and 2 Kelp, in any order.
 
-### Scute
+### Turtle Scute
 
 ![img_47.png](imgs/img_47.png)
 

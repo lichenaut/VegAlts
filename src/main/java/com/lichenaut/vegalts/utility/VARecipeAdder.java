@@ -21,6 +21,7 @@ import com.lichenaut.vegalts.recipes.thirteen.*;
 import com.lichenaut.vegalts.listeners.twenty.VABrushListener;
 import com.lichenaut.vegalts.listeners.twenty.VAFishingListener20;
 import com.lichenaut.vegalts.recipes.twenty.*;
+import com.lichenaut.vegalts.recipes.twentyone.VABreezeRod;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
@@ -42,7 +43,10 @@ public class VARecipeAdder {
         HashSet<String> addedRecipies = new HashSet<>();//tracks the most up-to-date recipes, depending on version
         VAFishingReference ref = new VAFishingReference();
         for (int i = version; i > 0; i--) {
-            if (i == 20) {
+            if (i == 21) {
+                if (plugin.getPluginConfig().getBoolean("breeze-rod")) new VABreezeRod(plugin).addRecipe();
+            } else if (i == 20) {
+                if (plugin.getPluginConfig().getBoolean("armadillo-scute")) new VAArmadilloScute(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("beef")) if (addedRecipies.add("vegBeef")) new VABeef20(plugin).addRecipe();
                 pMan.registerEvents(new VABrushListener(plugin), plugin);
                 if (plugin.getPluginConfig().getBoolean("chicken")) if (addedRecipies.add("vegChicken")) new VAChicken20(plugin).addRecipe();
@@ -114,7 +118,7 @@ public class VARecipeAdder {
                 if (plugin.getPluginConfig().getBoolean("rabbits-foot")) new VARabbitsFoot(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("rotten-flesh")) new VARottenFlesh(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("salmon")) if (addedRecipies.add("vegSalmon")) new VASalmon13(plugin).addRecipe();
-                if (plugin.getPluginConfig().getBoolean("scute")) new VAScute(plugin).addRecipe();
+                if (plugin.getPluginConfig().getBoolean("turtle-scute")) new VATurtleScute(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("shulker-shell")) if (addedRecipies.add("vegShulkerShell")) new VAShulkerShell13(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("skeleton-skull")) new VASkeletonSkull(plugin).addRecipe();
                 if (plugin.getPluginConfig().getBoolean("slimeball")) new VASlimeball(plugin).addRecipe();
